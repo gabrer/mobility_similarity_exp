@@ -1,0 +1,55 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="filled", color="black", fillcolor="white" shape="circle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="5,c,h,j,n"];
+s0 -> s1 [label="9,d,v"];
+s0 -> s2 [label="3,4,6,b,e\nf,q,t,u\ny,z"];
+s0 -> s3 [label="7,8,g,k,m\nw"];
+s0 -> s4 [label="s"];
+s0 -> s6 [label="0,1,2,p,r\nx"];
+s1 -> s0 [label="8,c,d,f,y"];
+s1 -> s1 [label="5,n,t,u"];
+s1 -> s2 [label="7,9"];
+s1 -> s3 [label="3,g,s"];
+s1 -> s4 [label="e"];
+s1 -> s6 [label="0,1,2,4,6\nb,h,j,k\nm,p,q,r\nv,w,x,z"];
+s2 -> s0 [label="5,7,c,e,k\nq,t,w,z"];
+s2 -> s1 [label="1,2"];
+s2 -> s2 [label="6,9,d,f,m\nu,v"];
+s2 -> s3 [label="3,4,8,y"];
+s2 -> s4 [label="s"];
+s2 -> s5 [label="g"];
+s2 -> s6 [label="0,b,h,j,n\np,r,x"];
+s3 -> s0 [label="3,c,d,t,v\nx,z"];
+s3 -> s1 [label="1,2,b,e,f\nj"];
+s3 -> s2 [label="4,5,7,g,u"];
+s3 -> s3 [label="6,9,k,m,q\ns,w"];
+s3 -> s6 [label="0,8,h,n,p\nr,y"];
+s4 -> s0 [label="e,k,m,t,u"];
+s4 -> s1 [label="f,s"];
+s4 -> s3 [label="g"];
+s4 -> s5 [label="d"];
+s4 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,h\nj,n,p,q\nr,v,w,x\ny,z"];
+s5 -> s0 [label="f,s,v,y"];
+s5 -> s1 [label="d"];
+s5 -> s2 [label="u"];
+s5 -> s3 [label="e"];
+s5 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,g\nh,j,k,m\nn,p,q,r\nt,w,x,z"];
+s6 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

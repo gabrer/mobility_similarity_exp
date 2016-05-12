@@ -1,0 +1,123 @@
+CHECK DI SIMILARITA on training set' - Prefisso: wx4en
+----
+User 004
+017  0.259259
+n
+n
+n
+n
+n
+n
+n
+n
+
+
+----
+User 017
+004  0.5
+n
+n
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 041
+n
+n
+n
+062  0.411111
+085  0.355556
+128  0.455556
+n
+n
+n
+
+
+----
+User 062
+n
+n
+n
+041  0.484848
+085  0.787879
+128  0.545455
+n
+n
+n
+
+
+----
+User 085
+n
+n
+n
+041  0.282258
+062  0.887097
+128  0.604839
+n
+n
+n
+
+
+----
+User 128
+n
+n
+n
+041  0.885714
+062  0.6
+085  0.714286
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media : 0.555275
+Dev Std : 0.197128
+Dev Std norm: 0.355009

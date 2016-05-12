@@ -1,0 +1,799 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 1 d
++ 2 d e
++ 600 e
++ 2 e d
++ 22 e d e
++ 1 e d e d e
++ 2 e d e g
++ 1 e d e g e
++ 1 e f e
++ 1 e f g
++ 1 e f g e g e
++ 41 e g
++ 23 e g e
++ 1 e g e g e
++ 1 e g e g e g e g e g
++ 1 e g e g e g e g e g e g e
++ 1 e g e g e g e g e g e g e g e g e
++ 1 e g e g e g e g e g e g f
++ 1 e g e g e g e g e g e g f g f g e g e
++ 1 e g e g e s
++ 2 e g e s
++ 1 e g f d 9 c b
++ 1 e g f g e d
++ 1 e g f g f g
++ 1 e g f g f g e
++ 2 e g u
++ 1 e g u g u
++ 1 e g u g u g e
++ 1 e g u g u g e g e d e
++ 1 e g u g u g u g u
++ 1 e g u g u g u g u g
++ 1 e g u v t
++ 1 e g u v u g e
++ 4 e s
++ 1 e s e
++ 1 e s e g
++ 1 e s e g e g
++ 1 e s e s
++ 1 e u g
++ 2 f d 9 c b
++ 1 f e
++ 24 g
++ 46 g e
++ 1 g f g f g e
++ 3 s
++ 4 s e
++ 1 s e g e
++ 1 s t s e
++ 1 t v u g e
++ 3 u g e
+- 1 3
+- 1 3 9
+- 1 3 9 d 9 3 9 d e
+- 1 4
+- 1 4 5 7 e
+- 1 5
+- 1 5 7 5 4
+- 1 6 3 6 3 6 3 9 d e
+- 15 7
+- 1 7 e
+- 2 7 k
+- 1 7 k 7 k 7
+- 1 8 9 d f
+- 1 8 g e d 9 d 9 f 9
+- 5 9
+- 1 9 3
+- 1 9 c
+- 2 9 c b
+- 1 9 c d 9 d
+- 7 9 d
+- 1 9 d 9
+- 1 9 d 9 d
+- 4 9 d e
+- 2 9 d e g
+- 2 9 d f g
+- 5 b
+- 2 b c
+- 1 b c 9
+- 1 b c 9 d f
+- 1 b c 9 d f g
+- 1 b c b c
+- 1 b c f e
+- 1 b c f g e
+- 5 c
+- 2 c 9 d
+- 1 c b
+- 1 c d
+- 1 c f
+- 1 c f c 9 d f c
+- 2 c f d
+- 2 c f d e
+- 1 c f d e d
+- 3 c f g e
+- 1 c f g f d
+- 1 c f g u g e g e g e g e d
+- 10 d 9
+- 1 d 9 2
+- 2 d 9 3 2
+- 1 d 9 3 9 3 6
+- 1 d 9 8 2
+- 1 d 9 c b
+- 14 d 9 d
+- 1 d 9 d 9 d 9
+- 1 d 9 d 9 d 9 3
+- 1 d 9 d 9 d e
+- 1 d 9 d e
+- 1 d 9 d e d e
+- 1 d 9 d e g f
+- 1 d 9 d f
+- 1 d 9 d f g
+- 1 d 9 e d
+- 37 d e d
+- 17 d e d e
+- 3 d e d e d
+- 3 d e d e d e
+- 1 d e d e d e d
+- 2 d e d e g
+- 1 d e d e s e s e
+- 1 d e d f d
+- 1 d e d f g e g e
+- 1 d e f
+- 1 d e f g f
+- 10 d e g
+- 9 d e g e
+- 4 d e g e d
+- 1 d e g e d e
+- 1 d e g e d e g u v
+- 1 d e g e g
+- 1 d e g e g e d 9 d
+- 1 d e g e g e g e g e d
+- 1 d e g e s e d
+- 3 d e g f
+- 1 d e g f d
+- 1 d e g f d f d
+- 1 d e g f g
+- 4 d e g u
+- 1 d e g u g e d
+- 3 d e g u v
+- 1 d e g u v u g e d
+- 1 d e g u v u g f d 9
+- 1 d e g u v y z
+- 1 d e s
+- 1 d e s t s
+- 32 d f
+- 2 d f c
+- 17 d f d
+- 1 d f d 5
+- 1 d f d 9 c
+- 1 d f d 9 d
+- 3 d f d e
+- 1 d f d e g e
+- 1 d f d e g e d
+- 1 d f d e g e g e g e g e
+- 2 d f d f
+- 2 d f d f d
+- 1 d f d f d f d
+- 1 d f e
+- 8 d f g
+- 1 d f g d
+- 4 d f g e
+- 1 d f g e d e
+- 1 d f g e g e
+- 1 d f g e g e g e d
+- 1 d f g e g e g e g e
+- 1 d f g f
+- 1 d f g f d
+- 1 d f g f d e d
+- 1 d f g f g f g f g f g f d
+- 1 d f g u d f d f d 1
+- 1 d f g u v
+- 1 d g
+- 1 d g e
+- 1 d s
+- 1 e 6 e g u
+- 1 e 7 5
+- 2 e 7 e
+- 1 e 7 e 7 e 7 5 7 e
+- 1 e 7 k e
+- 1 e c e s
+- 3 e d 9
+- 1 e d 9 3 1
+- 7 e d 9 3 2
+- 2 e d 9 8
+- 1 e d 9 8 2
+- 1 e d 9 8 9 d e
+- 1 e d 9 8 b
+- 1 e d 9 c b
+- 1 e d 9 d 6 3 6 3 6 4 6 3 6 3 6 d e
+- 1 e d 9 d 9 d e
+- 1 e d 9 d 9 d e g f g
+- 2 e d 9 d e
+- 1 e d 9 d e g
+- 1 e d 9 e d e g
+- 1 e d 9 g f
+- 17 e d e d
+- 1 e d e d 9 3 1
+- 4 e d e d e d
+- 2 e d e d e d e
+- 1 e d e d e d e d
+- 1 e d e d e d e d e d e
+- 1 e d e d e d e d e d e d e d e
+- 1 e d e d e d e d e g
+- 1 e d e d e d f d e g
+- 3 e d e d f d e
+- 1 e d e d f d f
+- 1 e d e f e
+- 1 e d e g e 7
+- 2 e d e g e g
+- 1 e d e g e g e
+- 2 e d e g e g e g e g e
+- 1 e d e g e g e s e s e
+- 1 e d e g e g u
+- 1 e d e g e g u g u v u s e
+- 1 e d e g e s e d
+- 1 e d e g f
+- 1 e d e g u v
+- 1 e d e s
+- 1 e d e s e
+- 1 e d e s u v y
+- 1 e d e u
+- 33 e d f
+- 2 e d f c
+- 1 e d f d
+- 13 e d f d e
+- 4 e d f d e g
+- 1 e d f d f d f g
+- 1 e d f d f d f g e g e
+- 1 e d f d f e
+- 4 e d f e
+- 4 e d f g
+- 8 e d f g e
+- 1 e d f g e d e
+- 2 e d f g e g e g e g e g e
+- 1 e d f g f
+- 2 e d f g f d
+- 1 e d f g f d e
+- 1 e d f g f g f d e
+- 56 e f
+- 1 e f c
+- 1 e f d
+- 1 e f d 9 c b
+- 1 e f d c
+- 1 e f d e
+- 1 e f d e d
+- 5 e f d f
+- 1 e f d f d e g e g f g e
+- 1 e f d f e
+- 11 e f g e
+- 1 e f g e g
+- 1 e f g e g e g e g e
+- 1 e f g e g e g e g e g e
+- 1 e f g e g e g f g e
+- 8 e f g f
+- 1 e f g f d 9 c b
+- 1 e f g f d e
+- 5 e f g f g e
+- 1 e f g f g f g e
+- 1 e f g f g f g f
+- 1 e f w t
+- 1 e g d 9 3 2
+- 1 e g d e
+- 6 e g e d
+- 3 e g e d e
+- 1 e g e d e d
+- 2 e g e d e g
+- 2 e g e d e g e
+- 2 e g e d e g e d
+- 1 e g e d e g e g
+- 1 e g e d e g e g e g f d f d f g e g e
+- 1 e g e d e g e g f g f
+- 1 e g e d f
+- 1 e g e d f d e g
+- 1 e g e d f d e g e s t m
+- 1 e g e d f d f d f d e d e g e
+- 1 e g e d f d f d f d e g e g e g e s e
+- 1 e g e d f d f d f g e g
+- 1 e g e d f d f d f g e g e g e g u g u g e
+- 2 e g e d f e
+- 1 e g e d f e d e g e
+- 1 e g e d f g e g e
+- 1 e g e d f g f g e g e g
+- 1 e g e f
+- 1 e g e f g f g f g f g f d e
+- 41 e g e g
+- 1 e g e g e d 9 d e d e g e
+- 1 e g e g e d e
+- 1 e g e g e d e g e
+- 1 e g e g e d e g e s e g e
+- 1 e g e g e d f d e
+- 1 e g e g e d f d f d f d e
+- 1 e g e g e d g e g e g e g e g e g e g
+- 1 e g e g e f g
+- 8 e g e g e g
+- 14 e g e g e g e
+- 1 e g e g e g e d f d f d f g e g e
+- 1 e g e g e g e g
+- 6 e g e g e g e g e
+- 1 e g e g e g e g e d e
+- 5 e g e g e g e g e g e
+- 2 e g e g e g e g e g e d
+- 3 e g e g e g e g e g e g e g e
+- 2 e g e g e g e g e g e g e g e g d e
+- 1 e g e g e g e g e g e g e g e g e g e g e g e g e g e g
+- 1 e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e g e
+- 1 e g e g e g e g e g e g e g e g e g f g f e
+- 1 e g e g e g e g e g e g e g e g f g f g e
+- 1 e g e g e g e g e g e g f g e
+- 1 e g e g e g e g f g e
+- 1 e g e g e g f
+- 2 e g e g e g f g e g f
+- 1 e g e g e s e
+- 3 e g e g e s e g e
+- 1 e g e g e s e s k s e s e g e g e
+- 3 e g e g f
+- 1 e g e g f c
+- 1 e g e g f d e g e d e g e
+- 1 e g e g f d e g e g e
+- 1 e g e g f d f d f d e g e g f g e g e s t m t s e
+- 1 e g e g f d f g d 9 e d e
+- 1 e g e g f d f g e g e g e g e
+- 3 e g e g f g e g e
+- 1 e g e g f g e g e g
+- 1 e g e g f v y
+- 1 e g e g s
+- 1 e g e g u
+- 1 e g e g u g e
+- 1 e g e g u g u v u s e
+- 1 e g e g u s e
+- 1 e g e g u v u
+- 9 e g e s e
+- 3 e g e s e g
+- 4 e g e s e g e
+- 1 e g e s e s
+- 1 e g e s e s e
+- 1 e g e s m
+- 1 e g e s t m q w x z
+- 1 e g e s t m t m t m t m t s
+- 1 e g e s t m t s t m t s e g f g f d g e
+- 1 e g e s u s
+- 1 e g e s u s e g e
+- 1 e g e s u v u g u g e
+- 1 e g e u g e g
+- 35 e g f
+- 1 e g f 6
+- 2 e g f c
+- 3 e g f c b
+- 1 e g f d
+- 1 e g f d 9
+- 1 e g f d 9 d f g e
+- 2 e g f d e
+- 1 e g f d e d e
+- 1 e g f d e g
+- 1 e g f d e g e s t m
+- 1 e g f d e g f g e
+- 1 e g f d f d f g e
+- 1 e g f d f e g e g e g e f
+- 4 e g f e
+- 9 e g f g
+- 23 e g f g e
+- 1 e g f g e d e g e
+- 1 e g f g e g e
+- 1 e g f g e g e g e g e
+- 1 e g f g e g e s e g e
+- 3 e g f g f
+- 1 e g f g f d 9 c b
+- 1 e g f g f d e
+- 1 e g f g f d e g
+- 1 e g f g f d f g e
+- 1 e g f g f e
+- 2 e g f g f g e g e
+- 1 e g f g f g f
+- 1 e g f g f g f g e
+- 1 e g f g f g f g f g e
+- 2 e g f g f g f g f g f e g
+- 1 e g f g f g f g f g f g f e
+- 1 e g f g f g f g f g f g f g f d 9 c b
+- 1 e g f g f g f g f g f g f g f e g
+- 1 e g f g f g f g f g f g f g f g f g f g f d 9 c b
+- 1 e g f g f g f g f g f g f g f g f g f g f g e
+- 1 e g f g f g f g f g f g f g f g f g f g f g f g
+- 1 e g f g u g e
+- 2 e g f g u v
+- 1 e g s e s e g e
+- 1 e g u e
+- 1 e g u e d e
+- 2 e g u g
+- 9 e g u g e
+- 2 e g u g e g e
+- 1 e g u g e g e g e g
+- 2 e g u g e g f d e
+- 1 e g u g u g
+- 1 e g u g u g u g u g u
+- 1 e g u g u g u v y z
+- 2 e g u g u s e
+- 1 e g u g u v u s e
+- 1 e g u s
+- 2 e g u s e
+- 2 e g u s u g
+- 12 e g u v
+- 1 e g u v u g u
+- 1 e g u v y v u g e
+- 3 e k
+- 1 e k h
+- 1 e q
+- 1 e q e
+- 1 e s e d
+- 12 e s e g e
+- 1 e s e g e f g
+- 1 e s e g e g e
+- 1 e s e g f
+- 9 e s e s e
+- 1 e s e s e d e g
+- 5 e s e s e g e
+- 2 e s e s e s
+- 2 e s e s e s e
+- 1 e s e s e s e d f g f g f e g
+- 2 e s e s e s e s e
+- 1 e s e s e s e s u s e
+- 1 e s e s e s k
+- 1 e s e s e s t s t
+- 1 e s e s e s u s u s e
+- 1 e s e s t
+- 1 e s e s t m
+- 1 e s e s u g
+- 1 e s e s u s u s e
+- 1 e s e s u v t s e
+- 2 e s g
+- 1 e s k
+- 1 e s m q m t s e g
+- 3 e s t
+- 1 e s t d f c
+- 1 e s t e g e
+- 3 e s t m
+- 1 e s t m q
+- 1 e s t m q m e
+- 2 e s t m q m t s e
+- 1 e s t m q m t s e g e g e
+- 1 e s t m t m
+- 1 e s t m t m t
+- 1 e s t m t m t s e d
+- 1 e s t m t s e
+- 1 e s t s e
+- 1 e s t s u g
+- 10 e s u
+- 2 e s u g e
+- 1 e s u g e g e
+- 1 e s u g f d e g e
+- 1 e s u g u g
+- 1 e s u g u g e
+- 1 e s u g u g u g u g u g
+- 1 e s u g u g u s e
+- 2 e s u g u s e
+- 5 e s u s
+- 4 e s u s e
+- 1 e s u s e g u e
+- 6 e s u v
+- 1 e s u v t
+- 1 e s u v u g e g u g e g e
+- 1 e s u v u g f
+- 1 e s u v u g u s e
+- 3 e s u v u s e
+- 1 e s u v u s e g e
+- 1 e s u v y
+- 1 e s u v y v t
+- 1 e s u v y z
+- 2 e t
+- 1 e t s
+- 3 e u
+- 1 e u e
+- 1 e u g d
+- 1 e v e
+- 1 e v g e
+- 1 e v y
+- 1 e z
+- 147 f
+- 1 f c
+- 1 f c 9 8
+- 1 f c 9 8 b c f g u v y z
+- 1 f c f
+- 22 f d
+- 1 f d 9
+- 31 f d e
+- 1 f d e 7 e 7
+- 1 f d e d
+- 1 f d e d e g e g e
+- 1 f d e d f
+- 3 f d e g
+- 5 f d e g e
+- 1 f d e g e d e g
+- 3 f d f
+- 2 f d f d
+- 2 f d f d e
+- 1 f d f d f
+- 1 f d f d f d
+- 1 f d f g
+- 1 f d f g e g f
+- 1 f e d f
+- 1 f e f
+- 1 f e f g e g e g e
+- 1 f e g e
+- 1 f e s t
+- 72 f g
+- 63 f g e
+- 1 f g e d
+- 1 f g e d e d
+- 1 f g e g
+- 5 f g e g e
+- 2 f g e g e g e
+- 3 f g e g e g e g e
+- 1 f g e g u g f
+- 1 f g e s t
+- 10 f g f
+- 3 f g f g
+- 4 f g f g e
+- 5 f g f g f
+- 1 f g f g f d 6 d f d e f
+- 2 f g f g f g e
+- 1 f g f g f g e g f d f d f
+- 1 f g f g u g u g f
+- 1 f g u
+- 1 f g u e
+- 1 f g u g
+- 1 f g u g e
+- 1 f g u g f
+- 1 f g u v y
+- 1 f g u v y v y
+- 1 f k s f
+- 1 g c
+- 3 g d
+- 1 g d e d
+- 1 g d e g
+- 2 g e 7
+- 3 g e 7 e 7
+- 14 g e d
+- 2 g e d 9
+- 2 g e d 9 3 2
+- 1 g e d 9 d 9 d 9 d e
+- 1 g e d 9 d 9 d e g f g
+- 1 g e d 9 d 9 f d f d 9 d
+- 1 g e d 9 d e d
+- 1 g e d 9 d e g d
+- 1 g e d 9 d f
+- 1 g e d 9 d f g
+- 8 g e d e
+- 2 g e d e d
+- 1 g e d e d 9
+- 1 g e d e d 9 d e d e
+- 3 g e d e d e
+- 2 g e d e d e g
+- 1 g e d e d e g e s t w q m t
+- 10 g e d e g
+- 1 g e d e g e
+- 1 g e d e g e d e g
+- 2 g e d e g e d f g f g e g
+- 2 g e d e g e g
+- 2 g e d e g f g
+- 1 g e d e g v y
+- 1 g e d e s e s e 7
+- 3 g e d f
+- 1 g e d f d e
+- 1 g e d f d e g
+- 1 g e d f d f d f g e g
+- 2 g e d f d f e d f g
+- 6 g e d f g
+- 1 g e d g e g
+- 1 g e f g e g
+- 194 g e g
+- 1 g e g c g
+- 39 g e g e
+- 1 g e g e d
+- 1 g e g e d 9 8
+- 1 g e g e d e f e
+- 1 g e g e d e g
+- 19 g e g e g
+- 13 g e g e g e
+- 8 g e g e g e g
+- 3 g e g e g e g e
+- 1 g e g e g e g e d e g f d e
+- 4 g e g e g e g e g
+- 3 g e g e g e g e g e g e g
+- 1 g e g e g e g e g e g e g e
+- 1 g e g e g e g e g e g e g e g e g e g e g f c
+- 1 g e g e g e g f d e g
+- 1 g e g e g e g f d e g e g
+- 1 g e g e g u
+- 5 g e g f
+- 1 g e g f d e d 9 d e g
+- 1 g e g f d e g e
+- 1 g e g f d e g u g e g e g
+- 3 g e g f g
+- 2 g e g f g e
+- 1 g e g f g f
+- 3 g e g u
+- 1 g e g u g
+- 1 g e g u g e g
+- 1 g e g u g u g u
+- 1 g e g u s u g
+- 3 g e g u v
+- 1 g e g u v u g
+- 7 g e s
+- 3 g e s e
+- 4 g e s e g
+- 1 g e s e g e
+- 1 g e s e g e g
+- 1 g e s e s e s e s e g e g
+- 1 g e s g e g
+- 1 g e s k s e g
+- 1 g e s t m
+- 3 g e s t m j n
+- 1 g e s t m q m q m t s e g
+- 1 g e s t m q w q w q m t s e g e
+- 1 g e s t m q w t s e
+- 1 g e s t m t m
+- 1 g e s t m t m t s e g e
+- 2 g e s t m t m t s e g e g
+- 1 g e s t m t s e g
+- 1 g e s t s t
+- 1 g e s t s t s e
+- 1 g e s t s t s t s t s e g
+- 1 g e s t v u g
+- 2 g e s u g
+- 1 g e u e d
+- 68 g f
+- 1 g f c 9 d
+- 6 g f d
+- 2 g f d 9
+- 1 g f d 9 8
+- 3 g f d 9 c b
+- 5 g f d e
+- 4 g f d e g
+- 1 g f d e g f g e
+- 1 g f d f
+- 2 g f d f g
+- 1 g f d f g e g
+- 1 g f d f g e g e g e g
+- 1 g f d f g f
+- 2 g f e
+- 1 g f e g
+- 69 g f g
+- 16 g f g e
+- 1 g f g e d 9 d e d e
+- 1 g f g e d f g
+- 6 g f g e g
+- 1 g f g e s e
+- 5 g f g f
+- 1 g f g f d f g
+- 5 g f g f g
+- 1 g f g f g e g
+- 1 g f g f g f
+- 1 g f g f g f d 9 c b
+- 5 g f g f g f g
+- 2 g f g f g f g f
+- 1 g f g f g f g f d e g
+- 1 g f g f g f g f g e
+- 1 g f g f g f g f g f g
+- 1 g f g f g f g f g f g f
+- 2 g f g f g u v
+- 1 g s t s t s e g
+- 1 g s u e
+- 29 g u
+- 16 g u g
+- 4 g u g e
+- 1 g u g e g
+- 1 g u g e g e
+- 1 g u g e g e g u g u g
+- 1 g u g e s e s
+- 3 g u g u
+- 4 g u g u g
+- 2 g u g u g e g e
+- 1 g u g u g u
+- 1 g u g u g u g u g u g u g u g u g
+- 1 g u g u g u s e 7 6 4 1
+- 1 g u g u v
+- 2 g u s
+- 1 g u s e
+- 1 g u s e 7 5 4 1
+- 2 g u s g
+- 1 g u s k h 5 h
+- 1 g u s t s
+- 2 g u s t s t s t s u g
+- 1 g u s t s u
+- 1 g u s u g
+- 15 g u v
+- 1 g u v u g
+- 1 g u v y v u g e
+- 1 k e
+- 1 k s
+- 1 k s e
+- 1 k s e s e
+- 12 m
+- 5 m q
+- 1 m q m
+- 1 m q m q m
+- 1 m q m t s e
+- 1 m t m t m t s e g e d e d e
+- 9 m t s e
+- 3 m t s e g
+- 1 m t s e g e s t m
+- 1 m t s e s e
+- 2 n
+- 1 n j
+- 1 q
+- 4 q m
+- 2 q m t s e
+- 2 q m t s e g e g e
+- 1 q w
+- 2 s e d
+- 1 s e d e
+- 6 s e g
+- 3 s e g e g
+- 20 s e s
+- 9 s e s e
+- 1 s e s e g e
+- 1 s e s e s e
+- 1 s e s e s e s
+- 1 s e s e s e s e s e s
+- 1 s e s t m
+- 1 s e s t w x z y z
+- 1 s e s u g u g u g
+- 1 s t
+- 1 s t m
+- 1 s t m q
+- 1 s t m t m t m t s e
+- 1 s t m t s t s k s e s e
+- 2 s t s
+- 1 s t s e d e
+- 1 s t s t
+- 1 s t s t s t s
+- 1 s t s t s t s e s e
+- 1 s u g
+- 1 s u g f d
+- 1 s u g u
+- 1 s u g u g
+- 1 s u g u g u g u
+- 2 s u s
+- 3 s u s e
+- 2 s u v u s e
+- 3 t
+- 1 t e
+- 1 t s
+- 2 t s e
+- 1 t s e g
+- 1 t s e g e
+- 1 t s t
+- 1 t s t s e
+- 1 t v u g e g
+- 4 t v u s e
+- 1 t w t v u s e
+- 1 t w y w
+- 1 t w y w t s e
+- 1 t w y w t v u s e
+- 19 u
+- 18 u g
+- 2 u g e d
+- 1 u g e d f
+- 1 u g e d f d e g
+- 5 u g e g
+- 1 u g e g e
+- 1 u g e g e g u
+- 1 u g e g f
+- 1 u g e g u g e d e g e g u g u g e g
+- 1 u g e g u g e g
+- 1 u g e s
+- 6 u g u
+- 1 u g u g
+- 1 u g u g u g u
+- 1 u g u v
+- 3 u s e
+- 1 u s t m j n
+- 2 u s u s e
+- 1 u s u s u s e g e
+- 1 u v
+- 1 u v t
+- 1 u v y z
+- 11 v
+- 1 v u
+- 7 v u g
+- 7 v u g e
+- 5 v u g e d
+- 1 v u g e g
+- 1 v u g f
+- 1 v u g f g e
+- 2 v u g u s e
+- 8 v u s e
+- 1 v y v
+- 1 v y z
+- 1 w
+- 2 w q
+- 1 w q g e
+- 1 w t
+- 1 y
+- 1 y v u g
+- 1 y v y v u g u g u g u g
+- 1 y v y v y v u g y g f
+- 5 z
+- 1 z y v u g e d
+- 2 z y z

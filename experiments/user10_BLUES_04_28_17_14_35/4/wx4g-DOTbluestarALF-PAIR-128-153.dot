@@ -1,0 +1,33 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="filled", color="black", fillcolor="white" shape="circle", label="q4"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="0,1,4,6,7\nb,c,e,f\ng,h,k,m\nn,p,q,r\ns,t,u,v\nw,x,y,z"];
+s0 -> s1 [label="2,j"];
+s0 -> s2 [label="8,9"];
+s0 -> s3 [label="3,5,d"];
+s1 -> s0 [label="0,1,2,4,5\n6,8,9,c\nd,h,m,n"];
+s1 -> s3 [label="3"];
+s1 -> s4 [label="7,b,e,f,g\nj,k,p,q\nr,s,t,u\nv,w,x,y\nz"];
+s2 -> s0 [label="1,2,4,6,8\nb,d"];
+s2 -> s1 [label="3"];
+s2 -> s3 [label="9,c"];
+s2 -> s4 [label="0,5,7,e,f\ng,h,j,k\nm,n,p,q\nr,s,t,u\nv,w,x,y\nz"];
+s3 -> s0 [label="0,1,3,4,6\n7,8,9,b\nc,d,e,f\nh,j,x"];
+s3 -> s3 [label="2"];
+s3 -> s4 [label="5,g,k,m,n\np,q,r,s\nt,u,v,w\ny,z"];
+s4 -> s4 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

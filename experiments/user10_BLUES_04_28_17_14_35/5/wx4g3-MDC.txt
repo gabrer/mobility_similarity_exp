@@ -1,0 +1,130 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4g3
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+025  0.5
+n
+n
+n
+n
+n
+n
+n
+
+
+----
+User 025
+n
+017  0.5
+n
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 062
+n
+n
+n
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 128
+n
+n
+n
+n
+n
+n
+140  1.14286
+144  0.142857
+153  0.111111
+
+
+----
+User 140
+n
+n
+n
+n
+n
+n
+128  1.14286
+144  0
+153  -0.333333
+
+
+----
+User 144
+n
+n
+n
+n
+n
+n
+128  0.142857
+140  0
+153  0
+
+
+----
+User 153
+n
+n
+n
+n
+n
+n
+128  0.111111
+140  -0.333333
+144  0
+
+
+
+Media NCD: 0.223356
+Dev Std NCD: 0.439281
+Dev Std norm NCD: 1.96673
+
+Media n stati: 7.2381
+Dev Std n stati: 2.13597
+Dev Std norm n stati: 0.295101

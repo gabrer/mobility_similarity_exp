@@ -1,0 +1,705 @@
+desc: (none)
+cmd: ./similarity
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=268987362
+mem_heap_B=25715457
+mem_heap_extra_B=8102911
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=578316966
+mem_heap_B=97200937
+mem_heap_extra_B=15696551
+mem_stacks_B=0
+heap_tree=detailed
+n4: 97200937 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 81807360 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 75509760 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 75509760 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 75509760 0x404766: main (similarity.cpp:175)
+  n1: 6291456 0x418FAC: gi::dfa::get_augmented_characterization_set(int) (stl_vector.h:911)
+   n1: 6291456 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+    n1: 6291456 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+     n0: 6291456 0x404766: main (similarity.cpp:175)
+  n0: 6144 in 8 places, all below massif's threshold (01.00%)
+ n1: 12733690 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 12733690 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 12733690 0x404766: main (similarity.cpp:175)
+ n1: 2618766 0x418F83: gi::dfa::get_augmented_characterization_set(int) (new_allocator.h:104)
+  n1: 2618766 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+   n1: 2618766 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 2618766 0x404766: main (similarity.cpp:175)
+ n0: 41121 in 127 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=3
+#-----------
+time=765724187
+mem_heap_B=78038141
+mem_heap_extra_B=20971379
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=1050908449
+mem_heap_B=186072675
+mem_heap_extra_B=27488109
+mem_stacks_B=0
+heap_tree=detailed
+n4: 186072675 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 157304832 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 151007232 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 151007232 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 151007232 0x404766: main (similarity.cpp:175)
+  n1: 6291456 0x418FAC: gi::dfa::get_augmented_characterization_set(int) (stl_vector.h:911)
+   n1: 6291456 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+    n1: 6291456 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+     n0: 6291456 0x404766: main (similarity.cpp:175)
+  n0: 6144 in 8 places, all below massif's threshold (01.00%)
+ n1: 26107932 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 26107932 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 26107932 0x404766: main (similarity.cpp:175)
+ n1: 2618766 0x418F83: gi::dfa::get_augmented_characterization_set(int) (new_allocator.h:104)
+  n1: 2618766 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+   n1: 2618766 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 2618766 0x404766: main (similarity.cpp:175)
+ n0: 41145 in 127 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=5
+#-----------
+time=1250534463
+mem_heap_B=142133321
+mem_heap_extra_B=33108791
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1495237382
+mem_heap_B=149943877
+mem_heap_extra_B=40031019
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1760811398
+mem_heap_B=158501655
+mem_heap_extra_B=47457481
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1996022438
+mem_heap_B=363778905
+mem_heap_extra_B=51108471
+mem_stacks_B=0
+heap_tree=detailed
+n3: 363778905 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 308299776 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 302002176 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 302002176 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 302002176 0x404766: main (similarity.cpp:175)
+  n1: 6291456 0x418FAC: gi::dfa::get_augmented_characterization_set(int) (stl_vector.h:911)
+   n1: 6291456 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+    n1: 6291456 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+     n0: 6291456 0x404766: main (similarity.cpp:175)
+  n0: 6144 in 8 places, all below massif's threshold (01.00%)
+ n1: 52819190 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 52819190 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 52819190 0x404766: main (similarity.cpp:175)
+ n0: 2659939 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=9
+#-----------
+time=2135909372
+mem_heap_B=267591069
+mem_heap_extra_B=55048291
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2322425202
+mem_heap_B=273527503
+mem_heap_extra_B=60340305
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2485626471
+mem_heap_B=278749235
+mem_heap_extra_B=64944341
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2648827863
+mem_heap_B=284051583
+mem_heap_extra_B=69463633
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2905287339
+mem_heap_B=292144915
+mem_heap_extra_B=76810605
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=3052505662
+mem_heap_B=296934699
+mem_heap_extra_B=80882509
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=3284330062
+mem_heap_B=304223575
+mem_heap_extra_B=87550425
+mem_stacks_B=0
+heap_tree=detailed
+n3: 304223575 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 207636480 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 201338880 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 201338880 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 201338880 0x404766: main (similarity.cpp:175)
+  n1: 6291456 0x418FAC: gi::dfa::get_augmented_characterization_set(int) (stl_vector.h:911)
+   n1: 6291456 0x4191CF: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
+    n1: 6291456 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+     n0: 6291456 0x404766: main (similarity.cpp:175)
+  n0: 6144 in 8 places, all below massif's threshold (01.00%)
+ n1: 93927128 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 93927128 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 93927128 0x404766: main (similarity.cpp:175)
+ n0: 2659967 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=16
+#-----------
+time=3438879751
+mem_heap_B=309295681
+mem_heap_extra_B=91780143
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=3632066772
+mem_heap_B=315979229
+mem_heap_extra_B=96741419
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=3886058855
+mem_heap_B=719823419
+mem_heap_extra_B=97717141
+mem_stacks_B=0
+heap_tree=detailed
+n3: 719823419 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 610289664 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 603992064 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 603992064 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 603992064 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 106873762 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 106873762 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 106873762 0x404766: main (similarity.cpp:175)
+ n0: 2659993 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=19
+#-----------
+time=4156520671
+mem_heap_B=528565641
+mem_heap_extra_B=103973095
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=4388345161
+mem_heap_B=537141773
+mem_heap_extra_B=109385891
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=4697444419
+mem_heap_B=548648391
+mem_heap_extra_B=116537545
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=4929268742
+mem_heap_B=557212139
+mem_heap_extra_B=121969493
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=5045180885
+mem_heap_B=561463901
+mem_heap_extra_B=124710539
+mem_stacks_B=0
+heap_tree=detailed
+n3: 561463901 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 408963072 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 402665472 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 402665472 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 402665472 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 149840798 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 149840798 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 149840798 0x404766: main (similarity.cpp:175)
+ n0: 2660031 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=24
+#-----------
+time=5277005709
+mem_heap_B=570119283
+mem_heap_extra_B=130048237
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=5431555683
+mem_heap_B=575786237
+mem_heap_extra_B=133709747
+mem_stacks_B=0
+heap_tree=detailed
+n3: 575786237 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 408963072 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 402665472 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 402665472 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 402665472 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 164163108 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 164163108 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 164163108 0x404766: main (similarity.cpp:175)
+ n0: 2660057 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=26
+#-----------
+time=5663380626
+mem_heap_B=584435477
+mem_heap_extra_B=139053275
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=5856568125
+mem_heap_B=591592485
+mem_heap_extra_B=143556811
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=6127030675
+mem_heap_B=601554645
+mem_heap_extra_B=149917891
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=6397493188
+mem_heap_B=611594289
+mem_heap_extra_B=156205519
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=6552043132
+mem_heap_B=617413111
+mem_heap_extra_B=159715569
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=6745230771
+mem_heap_B=624570127
+mem_heap_extra_B=164219145
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=6938418345
+mem_heap_B=631729317
+mem_heap_extra_B=168720595
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=7208880635
+mem_heap_B=641691489
+mem_heap_extra_B=175081663
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=7657719356
+mem_heap_B=1447502731
+mem_heap_extra_B=175344197
+mem_stacks_B=0
+heap_tree=peak
+n3: 1447502731 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1214269440 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 1207971840 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 1207971840 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 1207971840 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 230573144 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 230573144 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 230573144 0x404766: main (similarity.cpp:175)
+ n0: 2660147 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=35
+#-----------
+time=7966818923
+mem_heap_B=1056358283
+mem_heap_extra_B=182489789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=8275918273
+mem_heap_B=1067722695
+mem_heap_extra_B=189783769
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=8507742769
+mem_heap_B=1076284781
+mem_heap_extra_B=195209843
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=8816842240
+mem_heap_B=1087791411
+mem_heap_extra_B=202361485
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=9125941559
+mem_heap_B=1099300199
+mem_heap_extra_B=209511065
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=9357766125
+mem_heap_B=1107782165
+mem_heap_extra_B=215020763
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=9512315842
+mem_heap_B=1113614175
+mem_heap_extra_B=218518153
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=9744140411
+mem_heap_B=1122106589
+mem_heap_extra_B=224017763
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=9975965027
+mem_heap_B=1130735521
+mem_heap_extra_B=229380663
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1130735521 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 811616256 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 805318656 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 805318656 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 805318656 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 316459022 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 316459022 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 316459022 0x404766: main (similarity.cpp:175)
+ n0: 2660243 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=44
+#-----------
+time=10285064472
+mem_heap_B=1142242063
+mem_heap_extra_B=236532393
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=10516889052
+mem_heap_B=1150751279
+mem_heap_extra_B=242016113
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=10671438754
+mem_heap_B=1156558237
+mem_heap_extra_B=245537403
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=10903263298
+mem_heap_B=1165073651
+mem_heap_extra_B=251015261
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=11135087940
+mem_heap_B=1173677385
+mem_heap_extra_B=256401991
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=11289637683
+mem_heap_B=1179396023
+mem_heap_extra_B=260014409
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=11405549845
+mem_heap_B=1183649585
+mem_heap_extra_B=262753583
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=11521462010
+mem_heap_B=1187991349
+mem_heap_extra_B=265409091
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=11637374216
+mem_heap_B=1192343165
+mem_heap_extra_B=268055099
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1192343165 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 811616256 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 805318656 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 805318656 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 805318656 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 378066614 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 378066614 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 378066614 0x404766: main (similarity.cpp:175)
+ n0: 2660295 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=53
+#-----------
+time=11753286393
+mem_heap_B=1196695001
+mem_heap_extra_B=270701135
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=11869198575
+mem_heap_B=1200879581
+mem_heap_extra_B=273513131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=11985110815
+mem_heap_B=1205133129
+mem_heap_extra_B=276252295
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=12101023052
+mem_heap_B=1209462301
+mem_heap_extra_B=278919699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=12216935207
+mem_heap_B=1213814125
+mem_heap_extra_B=281565747
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=12332847460
+mem_heap_B=1218165945
+mem_heap_extra_B=284211775
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=12448759620
+mem_heap_B=1222363065
+mem_heap_extra_B=287011903
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=12564671785
+mem_heap_B=1226616673
+mem_heap_extra_B=289751007
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=12680583941
+mem_heap_B=1230935455
+mem_heap_extra_B=292428249
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=12796496100
+mem_heap_B=1235285001
+mem_heap_extra_B=295076431
+mem_stacks_B=0
+heap_tree=detailed
+n3: 1235285001 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 811616256 0x41A167: void std::vector<std::vector<unsigned short, std::allocator<unsigned short> >, std::allocator<std::vector<unsigned short, std::allocator<unsigned short> > > >::_M_emplace_back_aux<std::vector<unsigned short, std::allocator<unsigned short> > const&>(std::vector<unsigned short, std::allocator<unsigned short> > const&) (new_allocator.h:104)
+  n1: 805318656 0x41946B: gi::dfa::get_w_method_test_set(int) (stl_vector.h:911)
+   n1: 805318656 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+    n0: 805318656 0x404766: main (similarity.cpp:175)
+  n0: 6297600 in 9 places, all below massif's threshold (01.00%)
+ n1: 421008382 0x41943D: gi::dfa::get_w_method_test_set(int) (new_allocator.h:104)
+  n1: 421008382 0x4081E9: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
+   n0: 421008382 0x404766: main (similarity.cpp:175)
+ n0: 2660363 in 128 places, all below massif's threshold (01.00%)
+#-----------
+snapshot=63
+#-----------
+time=12912408353
+mem_heap_B=1239636821
+mem_heap_extra_B=297722459
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=13028320518
+mem_heap_B=1243848077
+mem_heap_extra_B=300509051
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=13144232691
+mem_heap_B=1248100153
+mem_heap_extra_B=303249783
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=13260144834
+mem_heap_B=1252406331
+mem_heap_extra_B=305938933
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=13376057027
+mem_heap_B=1256755937
+mem_heap_extra_B=308587031
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=13491969182
+mem_heap_B=1261107761
+mem_heap_extra_B=311233079
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=13607881349
+mem_heap_B=1265343417
+mem_heap_extra_B=313995271
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=13723793499
+mem_heap_B=1269583679
+mem_heap_extra_B=316748465
+mem_stacks_B=0
+heap_tree=empty

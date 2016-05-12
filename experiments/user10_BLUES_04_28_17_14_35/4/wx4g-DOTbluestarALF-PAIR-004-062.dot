@@ -1,0 +1,53 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="filled", color="black", fillcolor="white" shape="circle", label="q4"];
+s5 [style="filled", color="black", fillcolor="white" shape="circle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="2,d,e,g,h\nj,k,m,p\nq,r,s,t\nw,x,y,z"];
+s0 -> s1 [label="3"];
+s0 -> s2 [label="1,5,6,7,9\nb,n,u,v"];
+s0 -> s3 [label="0,4,8,c,f"];
+s1 -> s0 [label="0,5,7,8,c\nd,e"];
+s1 -> s1 [label="6"];
+s1 -> s2 [label="3"];
+s1 -> s3 [label="2,4"];
+s1 -> s4 [label="1,9"];
+s1 -> s6 [label="b,f,g,h,j\nk,m,n,p\nq,r,s,t\nu,v,w,x\ny,z"];
+s2 -> s0 [label="0,2,4,5,7\n9,b,c,d\ne,h,j,p\nq,t,u,v"];
+s2 -> s2 [label="1,6"];
+s2 -> s3 [label="g,s"];
+s2 -> s4 [label="3,8,f"];
+s2 -> s6 [label="k,m,n,r,w\nx,y,z"];
+s3 -> s0 [label="0,6,b,f,g\nj,u,w"];
+s3 -> s1 [label="3,4,d"];
+s3 -> s2 [label="2,5"];
+s3 -> s3 [label="1"];
+s3 -> s4 [label="8,9,h,v,x"];
+s3 -> s5 [label="e"];
+s3 -> s6 [label="7,c,k,m,n\np,q,r,s\nt,y,z"];
+s4 -> s0 [label="0,4,5,c,d\ne"];
+s4 -> s2 [label="1,6,9,b"];
+s4 -> s3 [label="3"];
+s4 -> s4 [label="2,8"];
+s4 -> s6 [label="7,f,g,h,j\nk,m,n,p\nq,r,s,t\nu,v,w,x\ny,z"];
+s5 -> s0 [label="9"];
+s5 -> s3 [label="6,g"];
+s5 -> s4 [label="c"];
+s5 -> s5 [label="d"];
+s5 -> s6 [label="0,1,2,3,4\n5,7,8,b\ne,f,h,j\nk,m,n,p\nq,r,s,t\nu,v,w,x\ny,z"];
+s6 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}
