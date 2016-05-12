@@ -83,7 +83,7 @@ int main(int argc, char* argv[])
 	// parse_input_args(argc, argv, user, &db_path);
 
 
-	string path_of_dfas = "../dfas_of_users/";
+	string path_of_dfas = "./dfas_of_users/";
 	string prefix = "wx";
 
 	static const int n_compared_users = 4;
@@ -119,7 +119,7 @@ int main(int argc, char* argv[])
 	// Prefix set
 	set<string> prefixes;
 
-	fs::path someDir("../dfas_of_users/");
+	fs::path someDir(path_of_dfas);
 	fs::directory_iterator end_iter;
 
 	if ( fs::exists(someDir) && fs::is_directory(someDir))
@@ -166,46 +166,83 @@ int main(int argc, char* argv[])
 	map < string, map< string, double> >  score_matrix;
 
 
+	for(auto &prefix : prefixes)
+	{
+		cout << "Prefisso: "<<prefix << endl;
+		// Read DFAs of users
+		map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
 
 
-	// Read DFAs of users
-	map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
 
-	// W-METHOD comparison
-	map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
+		// W-METHOD comparison
+		map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
 
+
+		for(auto &it : stats)
+		{
+			string user = it.first;
+			score_matrix[prefix][user] = stats.at(user).f_measure;
+		}
+	}
+
+
+	for(auto &prefix : score_matrix)
+	{
+		cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
+
+		for(auto &it : prefix.second)
+		{
+			string user = it.first;
+			double score = it.second;
+
+			cout << user << " - " << score << endl;
+		}
+	}
+
+
+//	// Read DFAs of users
+//	map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
+//
+//
+//	// W-METHOD comparison
+//	map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
 
 
 	// Read paired DFAs of users
-	map<string, gi::dfa> paired_dfas = read_paired_dfa_of_users(path_of_dfas, prefix, users);
+//	map<string, gi::dfa> paired_dfas = read_paired_dfa_of_users(path_of_dfas, prefix, users);
+//
+//
+//	// NCD comparison
+//	map< string, double> ncd_results = compare_dfas_NCD(target_dfa_string, dfas, paired_dfas);
+//
+//
+//	/////////////////////////////////////////////////////
+//	// PRINT NCD results
+//	cout << endl << "NCD Results:" << endl;
+//	for(auto &it : ncd_results)
+//		cout << it.first << ": " << it.second << endl;
 
 
-	// NCD comparison
-	map< string, double> ncd_results = compare_dfas_NCD(target_dfa_string, dfas, paired_dfas);
-
-
-	/////////////////////////////////////////////////////
-	// PRINT NCD results
-	cout << endl << "NCD Results:" << endl;
-	for(auto &it : ncd_results)
-		cout << it.first << ": " << it.second << endl;
-
-
-	// PRINT W-METHOD statistical results
-	for(auto &it : stats)
-	{
-		cout << endl << endl << "Utente "<<it.first << endl;
-
-		cout << "TP: "<<it.second.tp<<endl;
-		cout << "TN: "<<it.second.tn<<endl;
-		cout << "FP: "<<it.second.fp<<endl;
-		cout << "FN: "<<it.second.fn<<endl;
-
-		cout << "Precision: "<<it.second.precision <<endl;
-		cout << "Recall: "<<it.second.recall <<endl;
-		cout << "F-measure: "<<it.second.f_measure << endl;
-
-	}
+//	// PRINT W-METHOD statistical results
+//	for(auto &it : stats)
+//	{
+//		cout << endl << endl << "Utente "<<it.first << endl;
+//
+//		cout << "TP: "<<it.second.tp<<endl;
+//		cout << "TN: "<<it.second.tn<<endl;
+//		cout << "FP: "<<it.second.fp<<endl;
+//		cout << "FN: "<<it.second.fn<<endl;
+//
+//		cout << "Precision: "<<it.second.precision <<endl;
+//		cout << "Recall: "<<it.second.recall <<endl;
+//		cout << "F-measure: "<<it.second.f_measure << endl;
+//		cout << "BCR: "<<it.second.bcr << endl;
+//
+//		// POSSIAMO DIRE DI ESCLUDERE BCR E PRENDERE F-MEASURE
+//		// PERCHE E' MOLTO PROBABILE CHE PER UN UTENTE, TRA I SAMPLE NEGATIVI, CI SIANO
+//		// QUELLI DEL TARGET, FACENDO CRESCERE IL BCR.
+//
+//	}
 
 
 	return 0;
@@ -226,14 +263,17 @@ map<string, gi::dfa> read_dfa_of_users(string path_of_dfas, string prefix, vecto
 	{
 		string dfa_path = path_of_dfas + prefix + "-" + user_id_string +"-TXTbluestarALF.txt";
 
-		if( !fs::exists(dfa_path) )
-			continue;
 
 		//cout << "User: "<<user_id_string << endl;
 		//cout << "Reed dfa path: "<<dfa_path << endl;
 
+		if( !fs::exists(dfa_path) )
+			continue;
+
+
 
 		gi::dfa* dfa_tmp = new gi::dfa(gi::dfa::read_dfa_file(dfa_path));
+
 
 		dfas[user_id_string] = *dfa_tmp;
 
@@ -310,20 +350,17 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 
 	// Target dfa
 	//string target_user_string = intTostring(target_user);
-	gi::dfa target_dfa;
-	try{
-		target_dfa = dfas.at(target_user_string);
-	}catch(exception e){
+	if(dfas.count(target_user_string) == 0){
 		cout << "ERR: Impossibile to find target user's dfa" << endl;
 		exit(EXIT_FAILURE);
 	}
 
+	gi::dfa target_dfa = dfas.at(target_user_string);
 
 	// Num states of target dfa
 	int dfa_target_size = target_dfa.get_num_states();
 
 	//cout << "DFA target letto" << endl;
-
 
 
 	// Generation of test sets - W-METHOD
