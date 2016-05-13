@@ -408,6 +408,8 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 		throw "NO_TG_DFA";
 	}
 
+
+	//Load target dfa
 	gi::dfa target_dfa = dfas.at(target_user_string);
 
 	// Num states of target dfa
@@ -416,21 +418,31 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 	//cout << "DFA target letto" << endl;
 
 
+
 	// Generation of test sets - W-METHOD
 	for(auto &it : dfas){
 		if( !it.first.compare(target_user_string) )
 			continue;
 
+		//Print dot
 		string path_dot = "../dfas_of_users/"+it.first+".dot";
 		it.second.print_dfa_dot_mapped_alphabet("DFA", path_dot.c_str());
 
 		cout << "---> DFA " << it.first << "; dimensione: "<<it.second.get_num_states() << endl;
 
 		// Generate test set
-		test_sets[it.first] = it.second.get_w_method_test_set(dfa_target_size);
+		try
+		{
+			test_sets[it.first] = it.second.get_w_method_test_set(dfa_target_size);
+		} catch(const char* msg) {
+			string err = "TEST_SET_TOO_BIG";
+			if(!err.compare(msg))
+				cerr << "ERR: test set too big!" << endl;
+			cerr << "ERR on test generation " << endl;
+		}
 	}
 
-	cout << "Generation of test sets for DFAs complete." << endl;
+	cout << "Generation of test sets for DFAs finisced." << endl;
 
 
 
