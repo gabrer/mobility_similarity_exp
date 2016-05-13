@@ -89,7 +89,9 @@ int main(int argc, char* argv[])
 	string prefix = "wx";
 
 	static const int n_compared_users = 8;
-	const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
+	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
+
+	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
 	string target_dfa_string = "017";
 
