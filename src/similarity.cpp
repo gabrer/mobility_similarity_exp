@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
 	string prefix = "wx";
 
 	static const int n_compared_users = 8;
-	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
+	const int int_comp_user[n_compared_users] = {/*3,*/ 4, 17/*, 30, 68, 153, 163*/};
 
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
@@ -267,6 +267,9 @@ map < string, map<string, double> > get_score_matrix_for_target_user(string targ
 
 	for(auto &prefix : prefixes)
 	{
+		if(prefix.compare("wx4e"))
+			continue;
+
 		cout << endl << endl << "*******************" << endl;
 		cout << "Prefisso: "<<prefix << endl;
 		cout << "*******************" << endl;
