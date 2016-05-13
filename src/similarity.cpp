@@ -430,6 +430,9 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 
 		cout << "---> DFA " << it.first << "; dimensione: "<<it.second.get_num_states() << endl;
 
+		if(it.second.get_num_states() > 15)
+			throw "DFA_SIZE_TOO_BIG";
+
 		// Generate test set
 		try
 		{
