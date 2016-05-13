@@ -267,8 +267,6 @@ map < string, map<string, double> > get_score_matrix_for_target_user(string targ
 
 	for(auto &prefix : prefixes)
 	{
-		if(prefix.compare("wx4e"))
-			continue;
 
 		cout << endl << endl << "*******************" << endl;
 		cout << "Prefisso: "<<prefix << endl;
