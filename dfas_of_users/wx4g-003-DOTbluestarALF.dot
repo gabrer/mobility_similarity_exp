@@ -1,0 +1,52 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="filled", color="black", fillcolor="white" shape="circle", label="q2"];
+s3 [style="filled", color="black", fillcolor="white" shape="circle", label="q3"];
+s4 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="0,1,5,6,7\nc,f,g,h\nk,m,n,p\nq,r,t,u\nv,w,x,y\nz"];
+s0 -> s1 [label="2,3,8,d,e\nj"];
+s0 -> s2 [label="4,b"];
+s0 -> s3 [label="9"];
+s0 -> s5 [label="s"];
+s1 -> s0 [label="1,4,6,7,b\ne,f,g,k\nm,n,s,u"];
+s1 -> s1 [label="0,8,c,d,h"];
+s1 -> s2 [label="2,9"];
+s1 -> s3 [label="3"];
+s1 -> s5 [label="5"];
+s1 -> s6 [label="j,p,q,r,t\nv,w,x,y\nz"];
+s2 -> s0 [label="0,3,5,6,9\nb,e,j,x"];
+s2 -> s1 [label="d,v"];
+s2 -> s2 [label="1,2,4,8,c"];
+s2 -> s6 [label="7,f,g,h,k\nm,n,p,q\nr,s,t,u\nw,y,z"];
+s3 -> s0 [label="1,4,8,9,b\ne,f"];
+s3 -> s1 [label="d"];
+s3 -> s2 [label="2,3,c"];
+s3 -> s5 [label="6"];
+s3 -> s6 [label="0,5,7,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+s4 -> s0 [label="0,5,b,j"];
+s4 -> s1 [label="s"];
+s4 -> s2 [label="6,9"];
+s4 -> s4 [label="d"];
+s4 -> s5 [label="1"];
+s4 -> s6 [label="2,3,4,7,8\nc,e,f,g\nh,k,m,n\np,q,r,t\nu,v,w,x\ny,z"];
+s5 -> s0 [label="0,1,2,6,7\nh,t,u,w"];
+s5 -> s1 [label="d,k"];
+s5 -> s3 [label="3"];
+s5 -> s4 [label="4,e"];
+s5 -> s6 [label="5,8,9,b,c\nf,g,j,m\nn,p,q,r\ns,v,x,y\nz"];
+s6 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}
