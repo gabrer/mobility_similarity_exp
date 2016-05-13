@@ -437,7 +437,7 @@ Copyright (C) 2012 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16'
+ac_pwd='/home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16'
 srcdir='.'
 INSTALL='/usr/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -677,8 +677,8 @@ postuninstall_cmds=''
 finish_cmds='PATH="\$PATH:/sbin" ldconfig -n $libdir'
 finish_eval=''
 hardcode_into_libs='yes'
-sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/4.8 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
-configure_time_dlsearch_path='/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/mesa-egl /usr/lib/nvidia-340 /usr/lib32/nvidia-340 /lib32 /usr/lib32 '
+sys_lib_search_path_spec='/usr/lib/gcc/x86_64-linux-gnu/5 /usr/lib/x86_64-linux-gnu /usr/lib /lib/x86_64-linux-gnu /lib '
+configure_time_dlsearch_path='/lib /usr/lib /usr/lib/x86_64-linux-gnu/libfakeroot /lib/i386-linux-gnu /usr/lib/i386-linux-gnu /lib/i686-linux-gnu /usr/lib/i686-linux-gnu /usr/local/lib /var/lib/snapd/lib/gl /lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu /usr/lib/nvidia-361 /usr/lib32/nvidia-361 /usr/lib/nvidia-361 /usr/lib32/nvidia-361 /lib32 /usr/lib32 '
 configure_time_lt_sys_library_path=''
 hardcode_action='immediate'
 enable_dlopen='unknown'
@@ -734,12 +734,12 @@ prelink_cmds_CXX=''
 postlink_cmds_CXX=''
 file_list_spec_CXX=''
 hardcode_action_CXX='immediate'
-compiler_lib_search_dirs_CXX='/usr/lib/gcc/x86_64-linux-gnu/4.8 /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib /lib/x86_64-linux-gnu /lib/../lib /usr/lib/x86_64-linux-gnu /usr/lib/../lib /usr/lib/gcc/x86_64-linux-gnu/4.8/../../..'
-predep_objects_CXX='/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/4.8/crtbeginS.o'
-postdep_objects_CXX='/usr/lib/gcc/x86_64-linux-gnu/4.8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu/crtn.o'
+compiler_lib_search_dirs_CXX='/usr/lib/gcc/x86_64-linux-gnu/5 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu /usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib /lib/x86_64-linux-gnu /lib/../lib /usr/lib/x86_64-linux-gnu /usr/lib/../lib /usr/lib/gcc/x86_64-linux-gnu/5/../../..'
+predep_objects_CXX='/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbeginS.o'
+postdep_objects_CXX='/usr/lib/gcc/x86_64-linux-gnu/5/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o'
 predeps_CXX=''
 postdeps_CXX='-lstdc++ -lm -lgcc_s -lc -lgcc_s'
-compiler_lib_search_path_CXX='-L/usr/lib/gcc/x86_64-linux-gnu/4.8 -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.8/../../..'
+compiler_lib_search_path_CXX='-L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../..'
 
 LTCC='gcc'
 LTCFLAGS='-g -O2'
@@ -917,12 +917,12 @@ S["SET_MAKE"]=""
 S["mkdir_p"]="$(MKDIR_P)"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
-S["install_sh"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/install-sh"
-S["MAKEINFO"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing makeinfo"
-S["AUTOHEADER"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoheader"
-S["AUTOMAKE"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing automake-1.14"
-S["AUTOCONF"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoconf"
-S["ACLOCAL"]="${SHELL} /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing aclocal-1.14"
+S["install_sh"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/install-sh"
+S["MAKEINFO"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing makeinfo"
+S["AUTOHEADER"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoheader"
+S["AUTOMAKE"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing automake-1.15"
+S["AUTOCONF"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoconf"
+S["ACLOCAL"]="${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing aclocal-1.15"
 S["VERSION"]="1.0"
 S["PACKAGE"]="GI-learning"
 S["CYGPATH_W"]="echo"
@@ -992,6 +992,7 @@ S["infodir"]="${datarootdir}/info"
 S["docdir"]="${datarootdir}/doc/${PACKAGE_TARNAME}"
 S["oldincludedir"]="/usr/include"
 S["includedir"]="${prefix}/include"
+S["runstatedir"]="${localstatedir}/run"
 S["localstatedir"]="${prefix}/var"
 S["sharedstatedir"]="${prefix}/com"
 S["sysconfdir"]="${prefix}/etc"

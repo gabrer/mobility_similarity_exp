@@ -75,6 +75,8 @@ map<string, gi::dfa> read_paired_dfa_of_users(string path_of_dfas, string prefix
 map< string, statistical_measures>  compare_dfas_w_method(string target_user, map <string, gi::dfa> & dfas);
 map< string, double> compare_dfas_NCD(string target_user, map <string, gi::dfa> & dfas, map <string, gi::dfa> & paired_dfas);
 
+map < string, map<string, double> > get_score_matrix_for_target_user(string target_dfa_string, vector<string> users, set<string> prefixes, string path_of_dfas );
+
 
 int main(int argc, char* argv[])
 {
@@ -83,11 +85,11 @@ int main(int argc, char* argv[])
 	// parse_input_args(argc, argv, user, &db_path);
 
 
-	string path_of_dfas = "./dfas_of_users/";
+	string path_of_dfas = "../dfas_of_users/";
 	string prefix = "wx";
 
-	static const int n_compared_users = 4;
-	const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62, /*85, 128, 140, 144,*/ 153};
+	static const int n_compared_users = 8;
+	const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
 	string target_dfa_string = "017";
 
@@ -154,38 +156,17 @@ int main(int argc, char* argv[])
 	cout << "-- Prefissi unici --"<<endl;
 	for(auto &it : prefixes)
 		cout << "P: "<<it << endl;
+	//////////////////////////////////////////////////////////////
 
-	// !?!?!?!?! ADESSO HO LETTO TUTTI I PREFISSI NELLA CARTELLA, LI DEVI SOLO METTERE
-	// IN UNA STRUTTURA TIPO SET, SENZA RIPETIZIONI, COSÌ DA AVERE UNA LISTA DEI PREFISSI DA ANALIZZARE
-	// PER OGNI PREFISSO DEVI COSTRUIRE LA MAPPA CHE HO DEFINITO QUI (VD ANCHE FOGLIO)
-	// NB: CONTEMPLA IL CASO IN CUI PER UN PREFISSO NON CI SONO PROPRIO TUTTI GLI UTENTI!
+
 
 
 	///////////////////////////////////////////////////////////////
 	// Prefixes -> Users -> Scores with other users
-	map < string, map< string, double> >  score_matrix;
+	map < string, map<string, double> >  score_matrix = get_score_matrix_for_target_user(target_dfa_string, users, prefixes, path_of_dfas);
 
 
-	for(auto &prefix : prefixes)
-	{
-		cout << "Prefisso: "<<prefix << endl;
-		// Read DFAs of users
-		map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
-
-
-
-		// W-METHOD comparison
-		map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
-
-
-		for(auto &it : stats)
-		{
-			string user = it.first;
-			score_matrix[prefix][user] = stats.at(user).f_measure;
-		}
-	}
-
-
+	// Print scores
 	for(auto &prefix : score_matrix)
 	{
 		cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
@@ -198,6 +179,31 @@ int main(int argc, char* argv[])
 			cout << user << " - " << score << endl;
 		}
 	}
+
+
+
+
+
+	///////////////////////////////////////////////////////////////
+	// Prefixes -> Users -> Scores with other users
+	map < string, map<string, double> >  score_matrix2 = get_score_matrix_for_target_user("004", users, prefixes, path_of_dfas);
+
+
+	// Print scores
+	for(auto &prefix : score_matrix2)
+	{
+		cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
+
+		for(auto &it : prefix.second)
+		{
+			string user = it.first;
+			double score = it.second;
+
+			cout << user << " - " << score << endl;
+		}
+	}
+
+
 
 
 //	// Read DFAs of users
@@ -246,6 +252,48 @@ int main(int argc, char* argv[])
 
 
 	return 0;
+}
+
+
+
+
+map < string, map<string, double> > get_score_matrix_for_target_user(string target_dfa_string, vector<string> users, set<string> prefixes, string path_of_dfas )
+{
+	// Prefixes -> Users -> Scores with other users
+	map < string, map<string, double> >  score_matrix;
+
+
+	for(auto &prefix : prefixes)
+	{
+		cout << endl << endl << "*******************" << endl;
+		cout << "Prefisso: "<<prefix << endl;
+		cout << "*******************" << endl;
+
+
+		// Read DFAs of users
+		map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
+
+
+		// W-METHOD comparison
+		try
+		{
+			map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
+
+			// Insert values in score matrix
+			for(auto &it : stats){
+				string user = it.first;
+				score_matrix[prefix][user] = stats.at(user).f_measure;
+			}
+
+		}catch(const char* msg){
+			string nodfa = "NO_TG_DFA";
+			if(!nodfa.compare(msg))
+				cerr << "ERR: Impossibile to find target user's dfa" << endl;
+		}
+	}
+
+
+	return score_matrix;
 }
 
 
@@ -351,8 +399,8 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 	// Target dfa
 	//string target_user_string = intTostring(target_user);
 	if(dfas.count(target_user_string) == 0){
-		cout << "ERR: Impossibile to find target user's dfa" << endl;
-		exit(EXIT_FAILURE);
+		//cout << "ERR: Impossibile to find target user's dfa" << endl;
+		throw "NO_TG_DFA";
 	}
 
 	gi::dfa target_dfa = dfas.at(target_user_string);
@@ -371,13 +419,13 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 		string path_dot = "../dfas_of_users/"+it.first+".dot";
 		it.second.print_dfa_dot_mapped_alphabet("DFA", path_dot.c_str());
 
-		cout << "DFA " << it.first << "; dimensione: "<<it.second.get_num_states() << endl;
+		cout << "---> DFA " << it.first << "; dimensione: "<<it.second.get_num_states() << endl;
 
 		// Generate test set
 		test_sets[it.first] = it.second.get_w_method_test_set(dfa_target_size);
 	}
 
-	cout << "Generati i test" << endl;
+	cout << "Generation of test sets for DFAs complete." << endl;
 
 
 
@@ -418,7 +466,7 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 	  }
 	};
 
-	multiset< statistical_measures, B> ordered_statistics;
+	//multiset< statistical_measures, B> ordered_statistics;
 
 
 
@@ -431,15 +479,15 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 		it1.second.specificity 	= (double) it1.second.tn / (double) (it1.second.tn + it1.second.fp);
 		it1.second.bcr 			= (double) (it1.second.recall + it1.second.specificity) / (double) 2.0;
 
-		ordered_statistics.insert(it1.second);
+		//ordered_statistics.insert(it1.second);
 	}
 
 
 	// Print ordered statistics
-	for(auto &it : ordered_statistics)
-	{
-		cout << it.compared_dfa << " - " << it.f_measure << endl;
-	}
+//	for(auto &it : ordered_statistics)
+//	{
+//		cout << it.compared_dfa << " - " << it.f_measure << endl;
+//	}
 
 
 
@@ -549,6 +597,8 @@ map<string, double> compare_dfas_NCD(string target_user_string, map <string, gi:
 	return ncd_values;
 
 }
+
+
 
 
 
