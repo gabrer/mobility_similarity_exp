@@ -36,15 +36,15 @@
 ////#define EDSM_RES_PATH "DFA_dot" 							// by-products of inference
 
 
-#define MAX_ARGC 3
-#define MIN_ARGC 3
+#define MAX_ARGC 2
+#define MIN_ARGC 2
 
 namespace fs=boost::filesystem;
 
 using namespace std;
 
 
-void parse_input_args(int, char**, int&,  string *);
+int parse_input_args(int, char**);
 
 // Conformance test measures
 struct statistical_measures
@@ -82,18 +82,15 @@ int main(int argc, char* argv[])
 {
 
 	//parse input arguments
-	// parse_input_args(argc, argv, user, &db_path);
-
+	//int target_dfa = parse_input_args(argc, argv);
 
 	string path_of_dfas = "../dfas_of_users/";
-	string prefix = "wx";
 
-	static const int n_compared_users = 8;
-	const int int_comp_user[n_compared_users] = {/*3,*/ 4, 17/*, 30, 68, 153, 163*/};
 
+	static const int n_compared_users = 2;
+	const int int_comp_user[n_compared_users] = {3, 4/*, 17, 30, 68, 153, 163*/};
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
-	string target_dfa_string = "017";
 
 	// String ID of users
 	vector<string> users;
@@ -113,6 +110,18 @@ int main(int argc, char* argv[])
 		users.push_back(user_id_string);
 	}
 
+
+	// Target user
+	string target_dfa_string = "";
+//	for(int i=0; i<n_compared_users; ++i)
+//		if(int_comp_user[i] == target_dfa)
+//			target_dfa_string  = users.at(i);
+//
+//	if(!target_dfa_string.compare("")){
+//		cerr << "ERR: Target user is not valid!" << endl;
+//		return 0;
+//	}
+//	cout << "Target user: "<<target_dfa_string << endl;
 
 
 
@@ -165,55 +174,120 @@ int main(int argc, char* argv[])
 
 	///////////////////////////////////////////////////////////////
 	// Prefixes -> Users -> Scores with other users
-	map < string, map<string, double> >  score_matrix = get_score_matrix_for_target_user(target_dfa_string, users, prefixes, path_of_dfas);
+	typedef map < string, map<string, double>> score_maps;
+
+	map<string, score_maps> all_matrices;
 
 
-	// Print scores
-	for(auto &prefix : score_matrix)
+	// Cycle over all the target users
+	for(int i=0; i<n_compared_users; ++i)
 	{
-		cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
+		target_dfa_string  = users.at(i);
+		cout << "Current target user: "<<target_dfa_string << endl;
 
-		for(auto &it : prefix.second)
+		map < string, map<string, double> >  score_matrix = get_score_matrix_for_target_user(target_dfa_string, users, prefixes, path_of_dfas);
+
+		all_matrices[target_dfa_string] = score_matrix;
+		cout << "Added matrix for target user: "<< target_dfa_string << endl;
+	}
+
+
+	// Print all matrices of scores
+	for(auto &matrix : all_matrices)
+	{
+		cout << "USER: " <<matrix.first << endl;
+		for(auto &prefix : matrix.second)
 		{
-			string user = it.first;
-			double score = it.second;
+			cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
 
-			cout << user << " - " << score << endl;
+			for(auto &it : prefix.second)
+			{
+				string user = it.first;
+				double score = it.second;
+
+				cout << user << " - " << score << endl;
+			}
+		}
+	}
+
+
+	// Compute an average value of scores
+	// Cycle over all the target users
+	for(auto &matrix_target : all_matrices)
+	{
+		string target_user = matrix_target.first;
+		cout << "USER: " << target_user << endl;
+
+		for(auto &matrix_compared : all_matrices)
+		{
+			string compared_user = matrix_compared.first;
+			// For all the OTHER users: read value for the same prefix and compute an average value
+			if(matrix_compared.first.compare(matrix_target.first))
+			{
+
+				// Cycle over prefixes in the matrices
+				for(auto &pair_prefix_target : matrix_target.second)			// Target 	user's matrix
+				{
+					for(auto &pair_prefix_compared : matrix_compared.second)	// Compared user's matrix
+					{
+						string prefix_target 	= pair_prefix_target.first;
+						string prefix_compared 	= pair_prefix_compared.first;
+
+
+						// Same prefix
+						if(!prefix_target.compare(prefix_target))
+						{
+							// For every prefix there is a list of compared users
+							for(auto &list_compared_user_of_target : pair_prefix_target.second)
+							{
+								for(auto &list_compared_user_of_compared : pair_prefix_compared.second)
+								{
+									string user_in_list_of_target 	= list_compared_user_of_target.first;
+									string user_in_list_of_compared = list_compared_user_of_compared.first;
+
+									if(!user_in_list_of_target.compare(compared_user) && !user_in_list_of_compared.compare(target_user))
+									{
+										double score_target 	= list_compared_user_of_target.second;
+										double score_compared 	= list_compared_user_of_compared.second;
+
+										// Update new value
+										all_matrices[target_user][prefix_target][user_in_list_of_target] = (double) ((double) (score_target + score_compared) / (double) 2.0);
+
+									}
+								}
+							}
+						}
+					}
+
+				}
+			}
+
 		}
 	}
 
 
 
-
-
-	///////////////////////////////////////////////////////////////
-	// Prefixes -> Users -> Scores with other users
-	map < string, map<string, double> >  score_matrix2 = get_score_matrix_for_target_user("004", users, prefixes, path_of_dfas);
-
-
-	// Print scores
-	for(auto &prefix : score_matrix2)
+	// Print all matrices AFTER average computation
+	cout << "*********************************" << endl;
+	cout << "NEW MATRIX SCORES - AVERAGE" << endl;
+	for(auto &matrix : all_matrices)
 	{
-		cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
-
-		for(auto &it : prefix.second)
+		cout << "USER: " <<matrix.first << endl;
+		for(auto &prefix : matrix.second)
 		{
-			string user = it.first;
-			double score = it.second;
+			cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
 
-			cout << user << " - " << score << endl;
+			for(auto &it : prefix.second)
+			{
+				string user = it.first;
+				double score = it.second;
+
+				cout << user << " - " << score << endl;
+			}
 		}
 	}
 
 
-
-
-//	// Read DFAs of users
-//	map<string, gi::dfa> dfas = read_dfa_of_users(path_of_dfas, prefix, users);
-//
-//
-//	// W-METHOD comparison
-//	map< string, statistical_measures> stats = compare_dfas_w_method(target_dfa_string, dfas);
 
 
 	// Read paired DFAs of users
@@ -267,6 +341,9 @@ map < string, map<string, double> > get_score_matrix_for_target_user(string targ
 
 	for(auto &prefix : prefixes)
 	{
+
+		//if(prefix.compare("wx4erj"))
+		//	continue;
 
 		cout << endl << endl << "*******************" << endl;
 		cout << "Prefisso: "<<prefix << endl;
@@ -428,7 +505,7 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 
 		cout << "---> DFA " << it.first << "; dimensione: "<<it.second.get_num_states() << endl;
 
-		if(it.second.get_num_states() > 15)
+		if(it.second.get_num_states() >= 15)
 			throw "DFA_SIZE_TOO_BIG";
 
 		// Generate test set
@@ -443,7 +520,7 @@ map< string, statistical_measures>  compare_dfas_w_method(string target_user_str
 		}
 	}
 
-	cout << "Generation of test sets for DFAs finisced." << endl;
+	cout << "Generation of test sets for DFAs finished." << endl;
 
 
 
@@ -620,17 +697,17 @@ map<string, double> compare_dfas_NCD(string target_user_string, map <string, gi:
 
 
 
-
-void parse_input_args(int argc, char* argv[], int &user, string *dp){
+int parse_input_args(int argc, char* argv[]){
 	if(argc>MAX_ARGC || argc<MIN_ARGC){
 		cerr<<MSG_WRONG_ARGC<<endl;
 
 		exit(EXIT_FAILURE);
 	}
 
-	user = stringToint(argv[1]);
-	cout << "utente: "<< user << endl;
+	int user = stringToint(argv[1]);
+	cout << "Reed target user: "<< user << endl;
 
-	*dp = argv[2];
+	return user;
+	//*dp = argv[2];
 
 }
