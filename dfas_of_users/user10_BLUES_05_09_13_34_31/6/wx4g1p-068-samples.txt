@@ -1,0 +1,79 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 1 8
++ 2 j
++ 1 j m q t v y v
++ 1 j m q w t v y v
++ 2 j m t v
++ 1 j m t v y v y
++ 1 j n
++ 1 j n j m q w t v y v
++ 1 j n j n q m q w t w t v
++ 1 j n q t v
++ 2 j n q w t v
++ 1 j n q w t v y
++ 1 j n q w t w y
++ 1 j n q w t y
++ 1 j q w t v
++ 1 m j
++ 1 n j m q w t v
++ 1 n j m t v y v
++ 1 n j n j m t v
++ 1 n j n j n j m t
++ 1 n j n q w
++ 1 n j n q w t v y v
++ 1 n j n q w t w y v y v
++ 1 n j q m t v y v
++ 1 n q m q m q m q w t v
++ 1 n q m q w t v
++ 1 n q m t v
++ 1 n q w t v y v y v
++ 1 n q w t w v y
++ 2 n q w t w y v
++ 3 n q w y v
++ 1 n q w y v y
++ 1 n q w y v y v
++ 1 n q w y v y v y v y v y v
++ 11 v t m j
++ 5 v t m j n
++ 1 v t m j n j
++ 1 v t m j n j n
++ 1 v t m j n j n j n
++ 1 v t m q m j
++ 1 v t m q n j
++ 2 v t w q m j n
++ 3 v t w q m j n j n
++ 1 v t w q m q m j n j
++ 1 v t w q n
++ 1 v t w q n j
++ 1 v t w q n j n
++ 1 v t w t w m q n j
++ 2 v y v t m j
++ 1 v y v t w q m j
++ 1 y v t w t w t w q m j n j n
++ 1 y w q m j
++ 1 y w q n
+- 1 f c b
+- 1 h m t v
+- 1 j m t w t v y
+- 1 j n q m q w y v y v
+- 1 j n q w t v y v
+- 1 n j m t v
+- 1 n q m q w y
+- 1 n q w t
+- 2 n q w t v
+- 2 n q w t v y
+- 1 n q w v
+- 2 n q w y
+- 1 q w y
+- 1 q y
+- 1 r p
+- 1 u s e d 6 3 2 0 1
+- 1 v
+- 1 v t m j n j n j
+- 1 v y t w q n
+- 1 v y v t w q n
+- 1 v y w q n j n j
+- 1 y v t w t w q n
+- 2 y v y w q m
+- 1 y w t q n j n

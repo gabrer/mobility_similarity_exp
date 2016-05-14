@@ -87,8 +87,8 @@ int main(int argc, char* argv[])
 	string path_of_dfas = "../dfas_of_users/";
 
 
-	static const int n_compared_users = 2;
-	const int int_comp_user[n_compared_users] = {3, 4/*, 17, 30, 68, 153, 163*/};
+	static const int n_compared_users = 7;
+	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
 
@@ -211,7 +211,7 @@ int main(int argc, char* argv[])
 	}
 
 
-	// Compute an average value of scores
+	// Compute an AVERAGE value of scores
 	// Cycle over all the target users
 	for(auto &matrix_target : all_matrices)
 	{
@@ -228,37 +228,28 @@ int main(int argc, char* argv[])
 				// Cycle over prefixes in the matrices
 				for(auto &pair_prefix_target : matrix_target.second)			// Target 	user's matrix
 				{
-					for(auto &pair_prefix_compared : matrix_compared.second)	// Compared user's matrix
+					string prefix_target 	= pair_prefix_target.first;
+
+
+					// Same prefix
+					if(all_matrices.at(compared_user).count(prefix_target) != 0)
 					{
-						string prefix_target 	= pair_prefix_target.first;
-						string prefix_compared 	= pair_prefix_compared.first;
+						double score_target = all_matrices.at(target_user).at(prefix_target).at(compared_user);
+						double score_compared = all_matrices.at(compared_user).at(prefix_target).at(target_user);
 
+						double average = (double) ((double) (score_target + score_compared) / (double) 2.0);
 
-						// Same prefix
-						if(!prefix_target.compare(prefix_target))
-						{
-							// For every prefix there is a list of compared users
-							for(auto &list_compared_user_of_target : pair_prefix_target.second)
-							{
-								for(auto &list_compared_user_of_compared : pair_prefix_compared.second)
-								{
-									string user_in_list_of_target 	= list_compared_user_of_target.first;
-									string user_in_list_of_compared = list_compared_user_of_compared.first;
+						// Update new value
+//						cout << "Primo valore: " << score_target << ", secondo: " << score_compared << ", media: " << average << endl;
+//						cout << "Sostituisco: " << all_matrices.at(target_user).at(prefix_target).at(compared_user) << endl;
+//						cout << "Target user: "<<target_user << endl;
+//						cout << "Compared user: "<<compared_user << endl;
+//						cout << "Prefisso target: "<<prefix_target << endl;
+//						cout << "Utente comparato nella lista: " << compared_user << endl;
 
-									if(!user_in_list_of_target.compare(compared_user) && !user_in_list_of_compared.compare(target_user))
-									{
-										double score_target 	= list_compared_user_of_target.second;
-										double score_compared 	= list_compared_user_of_compared.second;
-
-										// Update new value
-										all_matrices[target_user][prefix_target][user_in_list_of_target] = (double) ((double) (score_target + score_compared) / (double) 2.0);
-
-									}
-								}
-							}
-						}
+						all_matrices[target_user][prefix_target][compared_user] = average;
+						all_matrices[compared_user][prefix_target][target_user] = average;
 					}
-
 				}
 			}
 
@@ -270,6 +261,7 @@ int main(int argc, char* argv[])
 	// Print all matrices AFTER average computation
 	cout << "*********************************" << endl;
 	cout << "NEW MATRIX SCORES - AVERAGE" << endl;
+	cout << "*********************************" << endl;
 	for(auto &matrix : all_matrices)
 	{
 		cout << "USER: " <<matrix.first << endl;

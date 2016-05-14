@@ -1,0 +1,76 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4ern
+----
+User 003
+004  -0.1
+017  -0.2
+030  0
+n
+n
+n
+
+
+----
+User 004
+003  -0.1
+017  -0.111111
+030  -0.0769231
+n
+n
+n
+
+
+----
+User 017
+003  -0.2
+004  -0.111111
+030  -0.153846
+n
+n
+n
+
+
+----
+User 030
+003  0
+004  -0.0769231
+017  -0.153846
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 153
+n
+n
+n
+n
+n
+163  0.2
+
+
+----
+User 163
+n
+n
+n
+n
+n
+153  0.2
+
+
+
+Media NCD: -0.0631258
+Dev Std NCD: 0.121912
+Dev Std norm NCD: -1.93125
+
+Media n stati: 8.61905
+Dev Std n stati: 2.43929
+Dev Std norm n stati: 0.283011

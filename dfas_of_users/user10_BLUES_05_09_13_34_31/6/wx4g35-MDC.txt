@@ -1,0 +1,67 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4g35
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 068
+n
+n
+n
+n
+153  0
+n
+
+
+----
+User 153
+n
+n
+n
+n
+068  0
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media NCD: 0
+Dev Std NCD: 0
+Dev Std norm NCD: -nan
+
+Media n stati: 5.33333
+Dev Std n stati: 0.471405
+Dev Std norm n stati: 0.0883883

@@ -1,0 +1,57 @@
+CHECK DI SIMILARITA on training set' - Prefisso: wx4exm
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media : -nan
+Dev Std : 0
+Dev Std norm: -nan

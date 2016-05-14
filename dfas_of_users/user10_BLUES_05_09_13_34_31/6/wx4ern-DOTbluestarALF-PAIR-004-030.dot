@@ -1,0 +1,62 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+s7 [style="filled", color="black", fillcolor="white" shape="circle", label="q7"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="3,4,5,7,8\n9,c,g,k\nr,t,u,x"];
+s0 -> s1 [label="0,b,d,h,j\nn,p,s,z"];
+s0 -> s2 [label="6,e,f,q"];
+s0 -> s3 [label="1,2,m,v,w"];
+s0 -> s4 [label="y"];
+s1 -> s0 [label="1,5,6,8,9\ne,g,p,r\nz"];
+s1 -> s1 [label="2,4,7,f,m\nn,s,v,w\nx"];
+s1 -> s3 [label="0,3,c,d,h\nj,k,q,t\nu,y"];
+s1 -> s7 [label="b"];
+s2 -> s0 [label="5,9,b,k,n\np,r,s,v"];
+s2 -> s1 [label="3,4,j,m,t\nu,w,y"];
+s2 -> s2 [label="d,g"];
+s2 -> s3 [label="c"];
+s2 -> s4 [label="f"];
+s2 -> s5 [label="6,e"];
+s2 -> s6 [label="7"];
+s2 -> s7 [label="0,1,2,8,h\nq,x,z"];
+s3 -> s0 [label="0,1,2,4,5\n6,c,d,h\nn,x"];
+s3 -> s1 [label="3,j,p,y"];
+s3 -> s3 [label="7,8,9,b,e\nf,k,m,q\nr,s,t,u\nv,w,z"];
+s3 -> s6 [label="g"];
+s4 -> s0 [label="b,c,r,v,x\ny,z"];
+s4 -> s1 [label="d,p"];
+s4 -> s2 [label="f"];
+s4 -> s3 [label="e,n"];
+s4 -> s4 [label="g,q,w"];
+s4 -> s6 [label="u"];
+s4 -> s7 [label="0,1,2,3,4\n5,6,7,8\n9,h,j,k\nm,s,t"];
+s5 -> s0 [label="3,d,f,k,s"];
+s5 -> s1 [label="g,h"];
+s5 -> s2 [label="6"];
+s5 -> s3 [label="1,7"];
+s5 -> s5 [label="4,5"];
+s5 -> s6 [label="u"];
+s5 -> s7 [label="0,2,8,9,b\nc,e,j,m\nn,p,q,r\nt,v,w,x\ny,z"];
+s6 -> s0 [label="9,d,h,k,s\nv,y"];
+s6 -> s1 [label="3,4,e"];
+s6 -> s3 [label="6,f,u"];
+s6 -> s5 [label="5"];
+s6 -> s7 [label="0,1,2,7,8\nb,c,g,j\nm,n,p,q\nr,t,w,x\nz"];
+s7 -> s7 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

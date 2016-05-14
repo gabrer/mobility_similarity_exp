@@ -1,0 +1,74 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q6"];
+s7 [style="filled", color="black", fillcolor="white" shape="circle", label="q7"];
+s8 [style="filled", color="black", fillcolor="white" shape="circle", label="q8"];
+s9 [style="filled", color="black", fillcolor="white" shape="circle", label="q9"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="1,3,4,6,8\n9,b,c,d\ne,q,t,u\nv,w,x,y\nz"];
+s0 -> s1 [label="5"];
+s0 -> s2 [label="0,2,g,j,m\nr,s"];
+s0 -> s3 [label="7,f,n"];
+s0 -> s4 [label="k,p"];
+s0 -> s5 [label="h"];
+s1 -> s0 [label="1,2,8,c,n\np,s,v,x\ny,z"];
+s1 -> s1 [label="5,6,e,g,h\nm,q,r,t\nw"];
+s1 -> s2 [label="4,7,d,k,u"];
+s1 -> s3 [label="3,f,j"];
+s1 -> s9 [label="0,9,b"];
+s2 -> s0 [label="0,1,2,3,4\n5,7,8,c\nd,e,g,m\nn,p,u,v\nw,x,y,z"];
+s2 -> s1 [label="f"];
+s2 -> s2 [label="6,9,j,r,s\nt"];
+s2 -> s3 [label="h"];
+s2 -> s4 [label="k,q"];
+s2 -> s9 [label="b"];
+s3 -> s0 [label="0,1,3,4,5\n6,c,d,e\ng,m,q,u\nx"];
+s3 -> s1 [label="h,p,s,t"];
+s3 -> s2 [label="2,j"];
+s3 -> s3 [label="k,n,v,w,y"];
+s3 -> s4 [label="7,r"];
+s3 -> s9 [label="8,9,b,f,z"];
+s4 -> s0 [label="2,6,d,f,g\nj,w,x,y\nz"];
+s4 -> s1 [label="1,3,7,e,k\ns"];
+s4 -> s2 [label="n,t"];
+s4 -> s5 [label="h,m,q,r"];
+s4 -> s6 [label="4,5,p"];
+s4 -> s9 [label="0,8,9,b,c\nu,v"];
+s5 -> s0 [label="1,3,4,6,7\nw,x,y,z"];
+s5 -> s1 [label="g,h,r"];
+s5 -> s2 [label="5,e,u"];
+s5 -> s3 [label="n,p"];
+s5 -> s4 [label="d,k,m,q"];
+s5 -> s5 [label="j,s,t"];
+s5 -> s6 [label="v"];
+s5 -> s9 [label="0,2,8,9,b\nc,f"];
+s6 -> s0 [label="5,p,y"];
+s6 -> s1 [label="r"];
+s6 -> s2 [label="4,q"];
+s6 -> s3 [label="t"];
+s6 -> s4 [label="6,e"];
+s6 -> s6 [label="7,j,k,n"];
+s6 -> s7 [label="h"];
+s6 -> s9 [label="0,1,2,3,8\n9,b,c,d\nf,g,m,s\nu,v,w,x\nz"];
+s7 -> s3 [label="4"];
+s7 -> s8 [label="5"];
+s7 -> s9 [label="0,1,2,3,6\n7,8,9,b\nc,d,e,f\ng,h,j,k\nm,n,p,q\nr,s,t,u\nv,w,x,y\nz"];
+s8 -> s4 [label="4"];
+s8 -> s9 [label="0,1,2,3,5\n6,7,8,9\nb,c,d,e\nf,g,h,j\nk,m,n,p\nq,r,s,t\nu,v,w,x\ny,z"];
+s9 -> s9 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

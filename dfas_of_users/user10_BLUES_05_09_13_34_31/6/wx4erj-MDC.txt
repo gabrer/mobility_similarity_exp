@@ -1,0 +1,76 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4erj
+----
+User 003
+004  0.0666667
+017  0.6
+030  0
+n
+n
+n
+
+
+----
+User 004
+003  0.0666667
+017  2.4
+030  0.142857
+n
+n
+n
+
+
+----
+User 017
+003  0.6
+004  2.4
+030  0.428571
+n
+n
+n
+
+
+----
+User 030
+003  0
+004  0.142857
+017  0.428571
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 153
+n
+n
+n
+n
+n
+163  0.25
+
+
+----
+User 163
+n
+n
+n
+n
+n
+153  0.25
+
+
+
+Media NCD: 0.555442
+Dev Std NCD: 0.777488
+Dev Std norm NCD: 1.39976
+
+Media n stati: 8.71429
+Dev Std n stati: 4.02543
+Dev Std norm n stati: 0.461935

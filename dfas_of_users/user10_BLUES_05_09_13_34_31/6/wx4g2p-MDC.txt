@@ -1,0 +1,67 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4g2p
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 153
+n
+n
+n
+n
+n
+163  -0.0909091
+
+
+----
+User 163
+n
+n
+n
+n
+n
+153  -0.0909091
+
+
+
+Media NCD: -0.0909091
+Dev Std NCD: 0
+Dev Std norm NCD: -0
+
+Media n stati: 8
+Dev Std n stati: 2.16025
+Dev Std norm n stati: 0.270031

@@ -1,0 +1,109 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 5 0 1 4 5 h j n p
++ 1 5 4 1 0
++ 1 c b
++ 22 p n j h 5 4 1 0
++ 1 p n j h 5 7 6 3 2
++ 1 p n j m k 7 6 3 2
++ 2 p r q n j h 5 4 1 0
++ 1 p r q n j h 5 4 6 3 2 0
++ 1 r n j h 5 4 1 0
++ 3 r p n j h 5 4 1 0
++ 1 r p n j h 5 7 5 6 4 6 3 2 0
++ 1 r p n j m k h 5 7 6 3 2
++ 1 r p n q n j h 5 4 1 0
++ 1 r p r q m k 7 6 3 2
++ 1 r q j h 5 4 1 0
++ 3 r q m j h 5 4 1 0
++ 1 r q m j h k h 5 4 1 0
++ 1 r q m j m k h 5 4 1 0
++ 2 r q m k 7 5 4 1 0
++ 1 r q m k 7 6 1 0
++ 1 r q m k 7 6 3 0 2
++ 2 r q m k 7 6 3 1 0 2
++ 9 r q m k 7 6 3 2
++ 2 r q m k 7 6 4 1 0
++ 1 r q m k 7 6 4 1 2
++ 1 r q m k 7 6 4 1 3 2 0
++ 3 r q m k h 5 4 1 0
++ 2 r q m k h k h 5 4 1 0
++ 7 r q n j h 5 4 1 0
++ 1 x
++ 1 z x r q m k 7 6 3 2
+- 2 0 1 4 5 h j n
+- 1 0 1 4 5 h j n q m k 7 6 3 2
+- 2 0 1 4 5 h n p
+- 1 0 1 4 5 j
+- 2 0 1 4 5 j p
+- 1 0 1 4 5 n
+- 1 0 1 4 h j n p
+- 1 0 1 4 h n
+- 2 0 1 4 h n p
+- 1 0 1 4 h p
+- 1 0 1 5 h j n p
+- 2 0 1 5 j n
+- 1 0 1 5 j n p
+- 1 0 4 5 j n
+- 2 0 4 5 j p
+- 1 0 4 h
+- 1 0 5 j p
+- 1 4 1 0
+- 1 c 3 1
+- 3 j n
+- 2 n
+- 1 n 5 4 1 0
+- 1 n h 4 0
+- 1 n h 5 1 0
+- 1 n j h 5 4 1 0
+- 1 n m k 7 6 3 2 0
+- 4 n p
+- 1 n q m k 5 4 0
+- 1 n q m k 7 6 2
+- 1 p 5 1
+- 3 p j 5 4 0
+- 2 p j h 4 0
+- 1 p j h 4 1
+- 1 p j h 4 1 0
+- 1 p j h 5 4 1 0
+- 1 p j h 7 6 1 0
+- 1 p m j h 5 4 1 0
+- 1 p n h 5 1 0
+- 1 p n j h 7 4 1 0
+- 1 p n m 7 3 2
+- 1 p r q j h 7 6 1 0
+- 1 q 4
+- 1 q 5 1 0
+- 1 r 5 4 0
+- 2 r j 5 1 0
+- 1 r j 5 4 0
+- 1 r j 5 4 1 0
+- 1 r j h 4 1 0
+- 1 r m h 4 1 0
+- 1 r m k 7 4 1
+- 1 r n h 5 1 0
+- 1 r n j 5 4 0
+- 1 r p r n j h 5 4 1 0
+- 1 r q h 4
+- 1 r q h 5 4 1 0
+- 1 r q j h 5 6 1
+- 1 r q m j h 5 4 6 3 1 0
+- 1 r q m k
+- 1 r q m k 5 4 1 0
+- 1 r q m k 7 5 4 6 3 2
+- 2 r q m k 7 5 4 6 3 2 0 2
+- 1 r q n
+- 1 r q n j h k h 5 4 1 0
+- 1 r q w t w t s e d 9 8
+- 2 r x r
+- 1 u w
+- 1 x r
+- 1 x w t s e d 9 8
+- 2 z x
+- 4 z x r
+- 1 z x r p n
+- 1 z x r p q n
+- 1 z x r q m k 5 4 1 0
+- 1 z x r q m k h 5 4 1 0
+- 1 z x r q n
+- 1 z x w t s e d e d 9 8

@@ -1,0 +1,61 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4g21
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media NCD: -nan
+Dev Std NCD: 0
+Dev Std norm NCD: -nan
+
+Media n stati: -nan
+Dev Std n stati: 0
+Dev Std norm n stati: -nan

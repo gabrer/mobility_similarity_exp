@@ -1,0 +1,67 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4ewg
+----
+User 003
+004  -0.25
+n
+n
+n
+n
+n
+
+
+----
+User 004
+003  -0.25
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 030
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media NCD: -0.25
+Dev Std NCD: 0
+Dev Std norm NCD: -0
+
+Media n stati: 3.66667
+Dev Std n stati: 0.471405
+Dev Std norm n stati: 0.128565

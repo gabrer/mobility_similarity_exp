@@ -1,0 +1,50 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="filled", color="black", fillcolor="white" shape="circle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="1,2,3,7,8\n9,b,c,d\ne,j,k,m\nq,r,s,t\nu,w,x,z"];
+s0 -> s1 [label="0,4,5,6,f\nh,n,p,v"];
+s0 -> s2 [label="y"];
+s0 -> s3 [label="g"];
+s1 -> s0 [label="3,5,9,d,f\ng,k,q,s\nt,w,y"];
+s1 -> s1 [label="0,1,7,e,h\nm,p,u,v"];
+s1 -> s3 [label="4,6,c"];
+s1 -> s4 [label="j,n"];
+s1 -> s6 [label="2,8,b,r,x\nz"];
+s2 -> s0 [label="q,t,x,z"];
+s2 -> s1 [label="4,n,v,y"];
+s2 -> s2 [label="w"];
+s2 -> s4 [label="5"];
+s2 -> s6 [label="0,1,2,3,6\n7,8,9,b\nc,d,e,f\ng,h,j,k\nm,p,r,s\nu"];
+s3 -> s0 [label="3,4,5,7,h"];
+s3 -> s1 [label="0,d,e,f,j\nu"];
+s3 -> s3 [label="6"];
+s3 -> s4 [label="1"];
+s3 -> s6 [label="2,8,9,b,c\ng,k,m,n\np,q,r,s\nt,v,w,x\ny,z"];
+s4 -> s0 [label="0,1,m,q"];
+s4 -> s1 [label="3,5,n,p"];
+s4 -> s2 [label="h"];
+s4 -> s4 [label="j"];
+s4 -> s5 [label="4"];
+s4 -> s6 [label="2,6,7,8,9\nb,c,d,e\nf,g,k,r\ns,t,u,v\nw,x,y,z"];
+s5 -> s0 [label="6"];
+s5 -> s3 [label="5"];
+s5 -> s4 [label="1"];
+s5 -> s6 [label="0,2,3,4,7\n8,9,b,c\nd,e,f,g\nh,j,k,m\nn,p,q,r\ns,t,u,v\nw,x,y,z"];
+s6 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

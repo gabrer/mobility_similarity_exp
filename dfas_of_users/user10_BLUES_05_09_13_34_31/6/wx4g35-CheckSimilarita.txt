@@ -1,0 +1,63 @@
+CHECK DI SIMILARITA on training set' - Prefisso: wx4g35
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 017
+n
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 068
+n
+n
+n
+n
+153  0.732955
+n
+
+
+----
+User 153
+n
+n
+n
+n
+068  0.738462
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media : 0.735708
+Dev Std : 0.0027535
+Dev Std norm: 0.00374265

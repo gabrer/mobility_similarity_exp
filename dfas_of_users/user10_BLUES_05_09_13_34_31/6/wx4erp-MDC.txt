@@ -1,0 +1,76 @@
+MATRICE DI SIMILARITA' - Prefisso: wx4erp
+----
+User 003
+004  -0.166667
+017  0
+030  0
+n
+n
+n
+
+
+----
+User 004
+003  -0.166667
+017  -0.0833333
+030  0.0833333
+n
+n
+n
+
+
+----
+User 017
+003  0
+004  -0.0833333
+030  0.166667
+n
+n
+n
+
+
+----
+User 030
+003  0
+004  0.0833333
+017  0.166667
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 153
+n
+n
+n
+n
+n
+163  0.142857
+
+
+----
+User 163
+n
+n
+n
+n
+n
+153  0.142857
+
+
+
+Media NCD: 0.0204082
+Dev Std NCD: 0.111443
+Dev Std norm NCD: 5.46072
+
+Media n stati: 7.09524
+Dev Std n stati: 2.40841
+Dev Std norm n stati: 0.339441
