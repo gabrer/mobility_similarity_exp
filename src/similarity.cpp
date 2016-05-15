@@ -87,8 +87,8 @@ int main(int argc, char* argv[])
 	string path_of_dfas = "../dfas_of_users/";
 
 
-	static const int n_compared_users = 7;
-	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
+	static const int n_compared_users = 2;
+	const int int_comp_user[n_compared_users] = {3, 4/*, 17, 30, 68, 153, 163*/};
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
 
 
@@ -107,7 +107,8 @@ int main(int argc, char* argv[])
 		else if(c_user>=100)
 			user_id_string = intTostring(c_user);
 
-		users.push_back(user_id_string);
+		users.push_back(user_id_string+"A");
+		users.push_back(user_id_string+"B");
 	}
 
 
@@ -195,7 +196,7 @@ int main(int argc, char* argv[])
 	// Print all matrices of scores
 	for(auto &matrix : all_matrices)
 	{
-		cout << "USER: " <<matrix.first << endl;
+		cout <<  endl << endl << "USER: " <<matrix.first << endl;
 		for(auto &prefix : matrix.second)
 		{
 			cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
@@ -216,39 +217,46 @@ int main(int argc, char* argv[])
 	for(auto &matrix_target : all_matrices)
 	{
 		string target_user = matrix_target.first;
-		cout << "USER: " << target_user << endl;
 
 		for(auto &matrix_compared : all_matrices)
 		{
 			string compared_user = matrix_compared.first;
+
 			// For all the OTHER users: read value for the same prefix and compute an average value
-			if(matrix_compared.first.compare(matrix_target.first))
+			if(matrix_compared.first.compare(matrix_target.first))				// Check matrices of other users
 			{
 
 				// Cycle over prefixes in the matrices
 				for(auto &pair_prefix_target : matrix_target.second)			// Target 	user's matrix
 				{
+					// Extract the prefix in the target
 					string prefix_target 	= pair_prefix_target.first;
 
 
-					// Same prefix
+					// Check whether there is the prefix in compared user
 					if(all_matrices.at(compared_user).count(prefix_target) != 0)
 					{
-						double score_target = all_matrices.at(target_user).at(prefix_target).at(compared_user);
-						double score_compared = all_matrices.at(compared_user).at(prefix_target).at(target_user);
 
-						double average = (double) ((double) (score_target + score_compared) / (double) 2.0);
+						// Check whether there are scores for the target and compared user respect to current prefix
+						// (e.g. if w-method is too expensive it might be stopped in some case)
+						if( all_matrices.at(compared_user).at(prefix_target).count(target_user) != 0  && all_matrices.at(target_user).at(prefix_target).count(compared_user) != 0 )
+						{
+							double target_score	  = all_matrices.at(target_user).at(prefix_target).at(compared_user);
+							double compared_score = all_matrices.at(compared_user).at(prefix_target).at(target_user);
+							double average = ((double)target_score + (double)compared_score) / (double) 2.0;
 
-						// Update new value
-//						cout << "Primo valore: " << score_target << ", secondo: " << score_compared << ", media: " << average << endl;
-//						cout << "Sostituisco: " << all_matrices.at(target_user).at(prefix_target).at(compared_user) << endl;
-//						cout << "Target user: "<<target_user << endl;
-//						cout << "Compared user: "<<compared_user << endl;
-//						cout << "Prefisso target: "<<prefix_target << endl;
-//						cout << "Utente comparato nella lista: " << compared_user << endl;
+							if(std::isnan(target_score)){
+								if(!std::isnan(compared_score))
+									average = compared_score;
+								else
+									average = NAN;
+							}else if(std::isnan(compared_score))
+								average = target_score;
 
-						all_matrices[target_user][prefix_target][compared_user] = average;
-						all_matrices[compared_user][prefix_target][target_user] = average;
+
+							all_matrices[target_user][prefix_target][compared_user] = average;
+							all_matrices[compared_user][prefix_target][target_user] = average;
+						}
 					}
 				}
 			}
@@ -264,7 +272,7 @@ int main(int argc, char* argv[])
 	cout << "*********************************" << endl;
 	for(auto &matrix : all_matrices)
 	{
-		cout << "USER: " <<matrix.first << endl;
+		cout << endl << endl << "USER: " <<matrix.first << endl;
 		for(auto &prefix : matrix.second)
 		{
 			cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
