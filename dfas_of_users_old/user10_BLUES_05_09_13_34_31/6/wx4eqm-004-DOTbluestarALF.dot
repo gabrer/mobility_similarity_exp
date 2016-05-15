@@ -1,0 +1,60 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="filled", color="black", fillcolor="white" shape="circle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="filled", color="black", fillcolor="white" shape="circle", label="q3"];
+s4 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q4"];
+s5 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q5"];
+s6 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q6"];
+s7 [style="filled", color="black", fillcolor="white" shape="circle", label="q7"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="4,5,6,7,9\nd,e,g,h\nk,m,q,s\nt,v,w"];
+s0 -> s1 [label="n,r"];
+s0 -> s2 [label="f,p,z"];
+s0 -> s3 [label="x"];
+s0 -> s4 [label="j,y"];
+s0 -> s7 [label="0,1,2,3,8\nb,c,u"];
+s1 -> s0 [label="5,h,v,w,x\nz"];
+s1 -> s1 [label="7,g,j,n,r"];
+s1 -> s2 [label="y"];
+s1 -> s4 [label="e,q"];
+s1 -> s5 [label="d,f,p"];
+s1 -> s7 [label="0,1,2,3,4\n6,8,9,b\nc,k,m,s\nt,u"];
+s2 -> s0 [label="5,6,e,j,p\nq,v,w,x\nz"];
+s2 -> s1 [label="n,y"];
+s2 -> s2 [label="7,d,m,s,t"];
+s2 -> s4 [label="g"];
+s2 -> s5 [label="r"];
+s2 -> s7 [label="0,1,2,3,4\n8,9,b,c\nf,h,k,u"];
+s3 -> s1 [label="r,w"];
+s3 -> s2 [label="p,y"];
+s3 -> s4 [label="z"];
+s3 -> s7 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\nq,s,t,u\nv,x"];
+s4 -> s0 [label="5,f,q,r,y"];
+s4 -> s1 [label="d,e,j,p,z"];
+s4 -> s4 [label="7,g,h,k,v\nx"];
+s4 -> s5 [label="w"];
+s4 -> s6 [label="n"];
+s4 -> s7 [label="0,1,2,3,4\n6,8,9,b\nc,m,s,t\nu"];
+s5 -> s0 [label="5,d,j,p,t\nz"];
+s5 -> s2 [label="y"];
+s5 -> s5 [label="7,e,n,w"];
+s5 -> s6 [label="q,r,x"];
+s5 -> s7 [label="0,1,2,3,4\n6,8,9,b\nc,f,g,h\nk,m,s,u\nv"];
+s6 -> s0 [label="n,p,x,y"];
+s6 -> s1 [label="w"];
+s6 -> s5 [label="z"];
+s6 -> s6 [label="j,q,r"];
+s6 -> s7 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nk,m,s,t\nu,v"];
+s7 -> s7 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

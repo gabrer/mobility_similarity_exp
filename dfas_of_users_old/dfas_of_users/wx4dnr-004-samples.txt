@@ -1,0 +1,14 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 5 g s t w x
++ 6 g u s t w x
++ 1 j
++ 1 p
++ 6 p r
++ 1 r
++ 8 r p
++ 5 x w t s g
++ 5 x w t s u g
+- 1 g u s
+- 1 x r p
+- 1 x w t s

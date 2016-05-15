@@ -1,0 +1,52 @@
+digraph BlueStar {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="filled", color="black", fillcolor="white" shape="circle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="filled", color="black", fillcolor="white" shape="circle", label="q4"];
+s5 [style="filled", color="black", fillcolor="white" shape="circle", label="q5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="q6"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="0,1,4,5,9\nc,d,e,g\nq,s,u,y"];
+s0 -> s1 [label="2,7,f,j,k\nr,t,w"];
+s0 -> s2 [label="6,8,m"];
+s0 -> s3 [label="3,b,h,n,v\nz"];
+s0 -> s4 [label="p,x"];
+s1 -> s0 [label="3,4,6,d,e\nf,g,j,p\nq,u,v,x\ny,z"];
+s1 -> s1 [label="0,1,2,7,8\n9,b,c,k\nm,r,s,t\nw"];
+s1 -> s2 [label="h,n"];
+s1 -> s3 [label="5"];
+s2 -> s0 [label="3,4,6,7,d\ne,h,q,s\nw"];
+s2 -> s1 [label="5,9,b,j,k\nm,p,r,t"];
+s2 -> s2 [label="2,n"];
+s2 -> s5 [label="x"];
+s2 -> s6 [label="0,1,8,c,f\ng,u,v,y\nz"];
+s3 -> s0 [label="1,3,4,9,c\ng,s,u,w\ny"];
+s3 -> s1 [label="2,6,d,h,k\nm,q,r,t"];
+s3 -> s2 [label="j,p"];
+s3 -> s3 [label="5,7,8,e"];
+s3 -> s4 [label="n"];
+s3 -> s5 [label="x"];
+s3 -> s6 [label="0,b,f,v,z"];
+s4 -> s0 [label="1,4,6,e,k\nq,r,z"];
+s4 -> s1 [label="w"];
+s4 -> s2 [label="8,h,m,p"];
+s4 -> s3 [label="s"];
+s4 -> s4 [label="j,n,t,x"];
+s4 -> s6 [label="0,2,3,5,7\n9,b,c,d\nf,g,u,v\ny"];
+s5 -> s0 [label="p,s"];
+s5 -> s1 [label="r"];
+s5 -> s4 [label="w,z"];
+s5 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\nq,t,u,v\nx,y"];
+s6 -> s6 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}

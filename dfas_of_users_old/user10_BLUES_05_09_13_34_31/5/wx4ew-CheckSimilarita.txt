@@ -1,0 +1,66 @@
+CHECK DI SIMILARITA on training set' - Prefisso: wx4ew
+----
+User 003
+004  0.998141
+n
+n
+n
+n
+n
+
+
+----
+User 004
+003  0.992537
+n
+n
+n
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+----
+User 030
+n
+n
+n
+068  0.0223048
+n
+n
+
+
+----
+User 068
+n
+n
+n
+030  0.519231
+n
+n
+
+
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+nan
+
+Media : 0.633054
+Dev Std : 0.402644
+Dev Std norm: 0.636034

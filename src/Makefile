@@ -115,23 +115,23 @@ similarity_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	./../mylibraries/lib/liblstar-1.0.a \
 	./../mylibraries/lib/libutilities-1.0.a \
 	./../mylibraries/lib/libsqlite3.a
-AM_V_lt = $(am__v_lt_$(V))
-am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))
+AM_V_lt = $(am__v_lt_@AM_V@)
+am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
 similarity_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(similarity_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_P = $(am__v_P_$(V))
-am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))
+AM_V_P = $(am__v_P_@AM_V@)
+am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
 am__v_P_1 = :
-AM_V_GEN = $(am__v_GEN_$(V))
-am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))
+AM_V_GEN = $(am__v_GEN_@AM_V@)
+am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)
 am__v_GEN_0 = @echo "  GEN     " $@;
 am__v_GEN_1 = 
-AM_V_at = $(am__v_at_$(V))
-am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
+AM_V_at = $(am__v_at_@AM_V@)
+am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
 am__v_at_0 = @
 am__v_at_1 = 
 DEFAULT_INCLUDES = -I. -I$(top_builddir)
@@ -144,16 +144,16 @@ LTCXXCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) \
 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
 	$(AM_CXXFLAGS) $(CXXFLAGS)
-AM_V_CXX = $(am__v_CXX_$(V))
-am__v_CXX_ = $(am__v_CXX_$(AM_DEFAULT_VERBOSITY))
+AM_V_CXX = $(am__v_CXX_@AM_V@)
+am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
 am__v_CXX_0 = @echo "  CXX     " $@;
 am__v_CXX_1 = 
 CXXLD = $(CXX)
 CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
 	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-AM_V_CXXLD = $(am__v_CXXLD_$(V))
-am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
+AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(similarity_SOURCES)
@@ -185,24 +185,24 @@ CTAGS = ctags
 am__DIST_COMMON = $(srcdir)/Makefile.in \
 	$(top_srcdir)/build-aux/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing aclocal-1.15
-AMTAR = $${TAR-tar}
+ACLOCAL = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run aclocal-1.11
+AMTAR = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run tar
 AM_CXXFLAGS =  -fopenmp
-AM_DEFAULT_VERBOSITY = 1
+AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 AR = ar
-AUTOCONF = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoconf
-AUTOHEADER = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing autoheader
-AUTOMAKE = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing automake-1.15
-AWK = mawk
+AUTOCONF = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run automake-1.11
+AWK = gawk
 BOOST_CPPFLAGS = 
 BOOST_FILESYSTEM_LDFLAGS = 
 BOOST_FILESYSTEM_LDPATH = 
-BOOST_FILESYSTEM_LIBS = -lboost_filesystem
+BOOST_FILESYSTEM_LIBS = -lboost_filesystem-mt
 BOOST_LDPATH = 
 BOOST_ROOT = 
 BOOST_SYSTEM_LDFLAGS = 
 BOOST_SYSTEM_LDPATH = 
-BOOST_SYSTEM_LIBS = -lboost_system
+BOOST_SYSTEM_LIBS = -lboost_system-mt
 CC = gcc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -g -O2
@@ -231,7 +231,7 @@ INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/bin/ld -m elf_x86_64
+LD = /opt/rh/devtoolset-2/root/usr/libexec/gcc/x86_64-redhat-linux/4.8.2/ld -m elf_x86_64
 LDFLAGS = 
 LIBOBJS = 
 LIBS = 
@@ -241,10 +241,10 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/missing makeinfo
+MAKEINFO = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /bin/mkdir -p
-NM = /usr/bin/nm -B
+NM = /opt/rh/devtoolset-2/root/usr/bin/nm -B
 NMEDIT = 
 OBJDUMP = objdump
 OBJEXT = o
@@ -262,13 +262,13 @@ PATH_SEPARATOR = :
 RANLIB = ranlib
 SED = /bin/sed
 SET_MAKE = 
-SHELL = /bin/bash
+SHELL = /bin/sh
 STRIP = strip
 VERSION = 1.0
-abs_builddir = /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/src
-abs_srcdir = /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/src
-abs_top_builddir = /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16
-abs_top_srcdir = /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16
+abs_builddir = /home/nds/workspace_git/mobility_similarity_exp/src
+abs_srcdir = /home/nds/workspace_git/mobility_similarity_exp/src
+abs_top_builddir = /home/nds/workspace_git/mobility_similarity_exp
+abs_top_srcdir = /home/nds/workspace_git/mobility_similarity_exp
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -276,8 +276,8 @@ ac_ct_DUMPBIN =
 am__include = include
 am__leading_dot = .
 am__quote = 
-am__tar = $${TAR-tar} chof - "$$tardir"
-am__untar = $${TAR-tar} xf -
+am__tar = ${AMTAR} chof - "$$tardir"
+am__untar = ${AMTAR} xf -
 bindir = ${exec_prefix}/bin
 build = x86_64-unknown-linux-gnu
 build_alias = 
@@ -298,19 +298,19 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/gnds/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/build-aux/install-sh
+install_sh = ${SHELL} /home/nds/workspace_git/mobility_similarity_exp/build-aux/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = $(MKDIR_P)
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
 prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
-runstatedir = ${localstatedir}/run
+runstatedir = @runstatedir@
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
 srcdir = .
@@ -427,7 +427,7 @@ include ./$(DEPDIR)/similarity-similarity.Po
 	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ $<
+#	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ $<
 
 .cpp.obj:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
@@ -435,7 +435,7 @@ include ./$(DEPDIR)/similarity-similarity.Po
 	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+#	$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 
 .cpp.lo:
 	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.lo$$||'`;\
@@ -443,21 +443,21 @@ include ./$(DEPDIR)/similarity-similarity.Po
 	$(am__mv) $$depbase.Tpo $$depbase.Plo
 #	$(AM_V_CXX)source='$<' object='$@' libtool=yes \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(LTCXXCOMPILE) -c -o $@ $<
+#	$(AM_V_CXX@am__nodep@)$(LTCXXCOMPILE) -c -o $@ $<
 
 similarity-similarity.o: similarity.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT similarity-similarity.o -MD -MP -MF $(DEPDIR)/similarity-similarity.Tpo -c -o similarity-similarity.o `test -f 'similarity.cpp' || echo '$(srcdir)/'`similarity.cpp
 	$(AM_V_at)$(am__mv) $(DEPDIR)/similarity-similarity.Tpo $(DEPDIR)/similarity-similarity.Po
 #	$(AM_V_CXX)source='similarity.cpp' object='similarity-similarity.o' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o similarity-similarity.o `test -f 'similarity.cpp' || echo '$(srcdir)/'`similarity.cpp
+#	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o similarity-similarity.o `test -f 'similarity.cpp' || echo '$(srcdir)/'`similarity.cpp
 
 similarity-similarity.obj: similarity.cpp
 	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT similarity-similarity.obj -MD -MP -MF $(DEPDIR)/similarity-similarity.Tpo -c -o similarity-similarity.obj `if test -f 'similarity.cpp'; then $(CYGPATH_W) 'similarity.cpp'; else $(CYGPATH_W) '$(srcdir)/similarity.cpp'; fi`
 	$(AM_V_at)$(am__mv) $(DEPDIR)/similarity-similarity.Tpo $(DEPDIR)/similarity-similarity.Po
 #	$(AM_V_CXX)source='similarity.cpp' object='similarity-similarity.obj' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
-#	$(AM_V_CXX_no)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o similarity-similarity.obj `if test -f 'similarity.cpp'; then $(CYGPATH_W) 'similarity.cpp'; else $(CYGPATH_W) '$(srcdir)/similarity.cpp'; fi`
+#	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(similarity_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o similarity-similarity.obj `if test -f 'similarity.cpp'; then $(CYGPATH_W) 'similarity.cpp'; else $(CYGPATH_W) '$(srcdir)/similarity.cpp'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

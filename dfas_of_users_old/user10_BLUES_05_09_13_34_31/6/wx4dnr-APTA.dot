@@ -1,0 +1,57 @@
+digraph APTA {
+__start0 [label="" shape="none"];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="#ff817b" shape="circle", label="0"];
+s1 [style="filled", color="black", fillcolor="powderblue" shape="circle", label="1"];
+s2 [style="rounded,filled", color="black", fillcolor="powderblue" shape="doublecircle", label="2"];
+s3 [style="rounded,filled", color="black", fillcolor="powderblue" shape="doublecircle", label="3"];
+s4 [style="rounded,filled", color="black", fillcolor="powderblue" shape="doublecircle", label="4"];
+s5 [style="filled", color="black", fillcolor="powderblue" shape="circle", label="5"];
+s6 [style="filled", color="black", fillcolor="white" shape="circle", label="6"];
+s7 [style="filled", color="black", fillcolor="white" shape="circle", label="7"];
+s8 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="8"];
+s9 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="9"];
+s10 [style="filled", color="black", fillcolor="white" shape="circle", label="10"];
+s11 [style="filled", color="black", fillcolor="white" shape="circle", label="11"];
+s12 [style="filled", color="black", fillcolor="white" shape="circle", label="12"];
+s13 [style="filled", color="black", fillcolor="white" shape="circle", label="13"];
+s14 [style="filled", color="black", fillcolor="white" shape="circle", label="14"];
+s15 [style="filled", color="black", fillcolor="white" shape="circle", label="15"];
+s16 [style="filled", color="black", fillcolor="white" shape="circle", label="16"];
+s17 [style="filled", color="black", fillcolor="white" shape="circle", label="17"];
+s18 [style="filled", color="black", fillcolor="white" shape="circle", label="18"];
+s19 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="19"];
+s20 [style="filled", color="black", fillcolor="white" shape="circle", label="20"];
+s21 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="21"];
+s22 [style="filled", color="black", fillcolor="white" shape="circle", label="22"];
+s23 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="23"];
+s24 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="24"];
+s0 -> s1 [label="15"];
+s0 -> s2 [label="17"];
+s0 -> s3 [label="21"];
+s0 -> s4 [label="23"];
+s0 -> s5 [label="29"];
+s1 -> s6 [label="24"];
+s1 -> s7 [label="26"];
+s3 -> s8 [label="23"];
+s4 -> s9 [label="21"];
+s5 -> s10 [label="23"];
+s5 -> s11 [label="28"];
+s6 -> s12 [label="25"];
+s7 -> s13 [label="24"];
+s10 -> s14 [label="21"];
+s11 -> s15 [label="25"];
+s12 -> s16 [label="28"];
+s13 -> s17 [label="25"];
+s15 -> s18 [label="24"];
+s16 -> s19 [label="29"];
+s17 -> s20 [label="28"];
+s18 -> s21 [label="15"];
+s18 -> s22 [label="26"];
+s20 -> s23 [label="29"];
+s22 -> s24 [label="15"];
+
+}

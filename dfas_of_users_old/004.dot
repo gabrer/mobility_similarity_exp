@@ -1,0 +1,43 @@
+digraph DFA {
+__start0 [style = invis, shape = none, label = "", width = 0, height = 0];
+
+rankdir=LR;
+size="8,5";
+
+s0 [style="filled", color="black", fillcolor="white" shape="circle", label="q0"];
+s1 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q1"];
+s2 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q2"];
+s3 [style="rounded,filled", color="black", fillcolor="white" shape="doublecircle", label="q3"];
+s4 [style="filled", color="black", fillcolor="white" shape="circle", label="q4"];
+s5 [style="filled", color="black", fillcolor="white" shape="circle", label="q5"];
+subgraph cluster_main { 
+	graph [pad=".75", ranksep="0.15", nodesep="0.15"];
+	 style=invis; 
+	__start0 -> s0 [penwidth=2];
+}
+s0 -> s0 [label="4,b,d,k,m\nr,s,x,z"];
+s0 -> s1 [label="0,2,7,c,e\nf,g,h,n\np,q,t,v\nw,y"];
+s0 -> s2 [label="3"];
+s0 -> s3 [label="1,8,j,u"];
+s0 -> s4 [label="5,6,9"];
+s1 -> s0 [label="0,2,4,5,6\n7,9,e,g\nh,p,q,s\nt,v,w,x\ny,z"];
+s1 -> s1 [label="1,8,b,c,d\nf,j,k,m\nn,r,u"];
+s1 -> s4 [label="3"];
+s2 -> s0 [label="1,3,6,7,8\n9,g,u"];
+s2 -> s1 [label="0,2,4,b,c"];
+s2 -> s2 [label="d,e"];
+s2 -> s4 [label="s,v"];
+s2 -> s5 [label="5,f,h,j,k\nm,n,p,q\nr,t,w,x\ny,z"];
+s3 -> s0 [label="2,6,9,n"];
+s3 -> s1 [label="0,1,b,e,g\nh,m,s,v"];
+s3 -> s4 [label="3,4,5"];
+s3 -> s5 [label="7,8,c,d,f\nj,k,p,q\nr,t,u,w\nx,y,z"];
+s4 -> s0 [label="1,3,7,8,e\nh,w"];
+s4 -> s1 [label="2,4,5,b,c\nd"];
+s4 -> s2 [label="0,6,u,v"];
+s4 -> s3 [label="j"];
+s4 -> s4 [label="9,t"];
+s4 -> s5 [label="f,g,k,m,n\np,q,r,s\nx,y,z"];
+s5 -> s5 [label="0,1,2,3,4\n5,6,7,8\n9,b,c,d\ne,f,g,h\nj,k,m,n\np,q,r,s\nt,u,v,w\nx,y,z"];
+
+}
