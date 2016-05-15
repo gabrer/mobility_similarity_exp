@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
 			exit(EXIT_FAILURE);
 		}
 
-		int c_user = int_comp_user[i];
+		int c_user = int_comp_user[0];
 
 		// User string id
 		string user_id_string ="";
@@ -138,8 +138,6 @@ int main(int argc, char* argv[])
 			users.push_back(user_id_string+"A-CV"+intTostring(i));
 			users.push_back(user_id_string+"B-CV"+intTostring(i));
 		}
-
-
 	}
 
 	// Target user
@@ -211,7 +209,7 @@ int main(int argc, char* argv[])
 
 
 	// Cycle over all the target users
-	for(int i=0; i<n_compared_users; ++i)
+	for(int i=0; i<users.size(); ++i)
 	{
 		target_dfa_string  = users.at(i);
 		cout << "Current target user: "<<target_dfa_string << endl;
