@@ -86,16 +86,43 @@ int main(int argc, char* argv[])
 
 	string path_of_dfas = "../dfas_of_users/";
 
+	bool cross_validation = true;
+	const int cross_val_iterationes = 3;
 
-	static const int n_compared_users = 2;
-	const int int_comp_user[n_compared_users] = {3, 4/*, 17, 30, 68, 153, 163*/};
+
+	static const int n_compared_users = 1;
+	const int int_comp_user[n_compared_users] = {3, /*4, 17, 30, 68, 153, 163*/};
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
-
 
 	// String ID of users
 	vector<string> users;
-	for(int i=0; i<n_compared_users; ++i)
+
+
+	if(!cross_validation)
 	{
+		for(int i=0; i<n_compared_users; ++i)
+		{
+			int c_user = int_comp_user[i];
+
+			// User string id
+			string user_id_string ="";
+			if(c_user <10)
+				user_id_string = "00"+intTostring(c_user);
+			else if(c_user>=10 && c_user<100)
+				user_id_string = "0"+intTostring(c_user);
+			else if(c_user>=100)
+				user_id_string = intTostring(c_user);
+
+			users.push_back(user_id_string);
+		}
+
+	} else {
+
+		if(n_compared_users != 1){
+			cout << "ERR: K fold need only one user ID!" << endl;
+			exit(EXIT_FAILURE);
+		}
+
 		int c_user = int_comp_user[i];
 
 		// User string id
@@ -107,10 +134,13 @@ int main(int argc, char* argv[])
 		else if(c_user>=100)
 			user_id_string = intTostring(c_user);
 
-		users.push_back(user_id_string+"A");
-		users.push_back(user_id_string+"B");
-	}
+		for(int i=0; i<cross_val_iterationes; ++i){
+			users.push_back(user_id_string+"A-CV"+intTostring(i));
+			users.push_back(user_id_string+"B-CV"+intTostring(i));
+		}
 
+
+	}
 
 	// Target user
 	string target_dfa_string = "";
@@ -392,8 +422,8 @@ map<string, gi::dfa> read_dfa_of_users(string path_of_dfas, string prefix, vecto
 		string dfa_path = path_of_dfas + prefix + "-" + user_id_string +"-TXTbluestarALF.txt";
 
 
-		//cout << "User: "<<user_id_string << endl;
-		//cout << "Reed dfa path: "<<dfa_path << endl;
+		cout << "User: "<<user_id_string << endl;
+		cout << "Reed dfa path: "<<dfa_path << endl;
 
 		if( !fs::exists(dfa_path) )
 			continue;

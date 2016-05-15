@@ -1,1195 +1,875 @@
-==23261== Memcheck, a memory error detector
-==23261== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
-==23261== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
-==23261== Command: ./similarity
-==23261== 
---23261-- Valgrind options:
---23261--    -v
---23261--    --leak-check=full
---23261--    --show-reachable=yes
---23261--    --track-origins=yes
---23261-- Contents of /proc/version:
---23261--   Linux version 3.16.0-70-generic (buildd@lgw01-01) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #90~14.04.1-Ubuntu SMP Wed Apr 6 22:56:34 UTC 2016
---23261-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-sse3
---23261-- Page sizes: currently 4096, max supported 4096
---23261-- Valgrind library directory: /usr/lib/valgrind
---23261-- Reading syms from /home/gabriele/Dropbox/workspace_github_cpp/GI_similiarty_STAIRS16/src/similarity
---23261-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
---23261--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
---23261--   .. CRC mismatch (computed ef2bc4a1 wanted 12987a55)
---23261--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
---23261--   .. CRC is valid
---23261-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
---23261--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
---23261--   .. CRC mismatch (computed 4f1eed43 wanted a323a3ab)
---23261--    object doesn't have a symbol table
---23261--    object doesn't have a dynamic symbol table
---23261-- Scheduler: using generic scheduler lock implementation.
---23261-- Reading suppressions file: /usr/lib/valgrind/default.supp
-==23261== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-23261-by-gabriele-on-???
-==23261== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-23261-by-gabriele-on-???
-==23261== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-23261-by-gabriele-on-???
-==23261== 
-==23261== TO CONTROL THIS PROCESS USING vgdb (which you probably
-==23261== don't want to do, unless you know exactly what you're doing,
-==23261== or are doing some strange experiment):
-==23261==   /usr/lib/valgrind/../../bin/vgdb --pid=23261 ...command...
-==23261== 
-==23261== TO DEBUG THIS PROCESS USING GDB: start GDB like this
-==23261==   /path/to/gdb ./similarity
-==23261== and then give GDB the following command
-==23261==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=23261
-==23261== --pid is optional if only one valgrind process is running
-==23261== 
---23261-- REDIR: 0x4019ca0 (ld-linux-x86-64.so.2:strlen) redirected to 0x380764b1 (???)
---23261-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
---23261--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
---23261--   .. CRC mismatch (computed fc68135e wanted 45f5e986)
---23261--    object doesn't have a symbol table
---23261-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
---23261--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
---23261--   .. CRC mismatch (computed ae683f7e wanted 08c06df2)
---23261--    object doesn't have a symbol table
-==23261== WARNING: new redirection conflicts with existing -- ignoring it
---23261--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x380764b1 ???
---23261--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
---23261-- REDIR: 0x4019a50 (ld-linux-x86-64.so.2:index) redirected to 0x4c2dd50 (index)
---23261-- REDIR: 0x4019c70 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c2f2f0 (strcmp)
---23261-- REDIR: 0x401a9c0 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c31da0 (mempcpy)
---23261-- Reading syms from /usr/lib/x86_64-linux-gnu/libboost_system.so.1.54.0
---23261--    object doesn't have a symbol table
---23261-- Reading syms from /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.54.0
---23261--    object doesn't have a symbol table
---23261-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
---23261--   Considering /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19 ..
---23261--   .. CRC mismatch (computed 5ce96d3c wanted bf86fabd)
---23261--    object doesn't have a symbol table
---23261-- Reading syms from /lib/x86_64-linux-gnu/libm-2.19.so
---23261--   Considering /lib/x86_64-linux-gnu/libm-2.19.so ..
---23261--   .. CRC mismatch (computed 0fbb5cf0 wanted cac31e3b)
---23261--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.19.so ..
---23261--   .. CRC is valid
---23261-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
---23261--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..
---23261--   .. CRC mismatch (computed 6116126e wanted 54e3f1f2)
---23261--    object doesn't have a symbol table
---23261-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
---23261--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
---23261--   .. CRC mismatch (computed 600bae51 wanted b4d0580d)
---23261--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
---23261--   .. CRC is valid
---23261-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.19.so
---23261--   Considering /lib/x86_64-linux-gnu/libpthread-2.19.so ..
---23261--   .. CRC mismatch (computed 4841b2fb wanted eec353ab)
---23261--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libpthread-2.19.so ..
---23261--   .. CRC is valid
---23261-- REDIR: 0x5afdd60 (libc.so.6:strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5b00050 (libc.so.6:strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5afd530 (libc.so.6:memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5afb7c0 (libc.so.6:rindex) redirected to 0x4c2da30 (rindex)
---23261-- REDIR: 0x5af9ac0 (libc.so.6:strlen) redirected to 0x4c2e0e0 (strlen)
---23261-- REDIR: 0x52afd90 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4c2b070 (operator new(unsigned long))
---23261-- REDIR: 0x5b02730 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5b08fd0 (libc.so.6:__memcpy_sse2_unaligned) redirected to 0x4c2f6b0 (memcpy@@GLIBC_2.14)
---23261-- REDIR: 0x5afcfa0 (libc.so.6:__GI_memcmp) redirected to 0x4c30b80 (__GI_memcmp)
---23261-- REDIR: 0x5af8070 (libc.so.6:strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5b08d20 (libc.so.6:__strcmp_sse2_unaligned) redirected to 0x4c2f1b0 (strcmp)
---23261-- REDIR: 0x5afcf60 (libc.so.6:bcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5bd1060 (libc.so.6:__memcmp_sse4_1) redirected to 0x4c30c00 (__memcmp_sse4_1)
---23261-- REDIR: 0x52ae0f0 (libstdc++.so.6:operator delete(void*)) redirected to 0x4c2c250 (operator delete(void*))
---23261-- REDIR: 0x5af3750 (libc.so.6:malloc) redirected to 0x4c2ab10 (malloc)
---23261-- REDIR: 0x5afd3a0 (libc.so.6:__GI_memmove) redirected to 0x4c31660 (__GI_memmove)
---23261-- REDIR: 0x5b02780 (libc.so.6:__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
---23261-- REDIR: 0x5afcc10 (libc.so.6:memchr) redirected to 0x4c2f390 (memchr)
---23261-- REDIR: 0x5af9f30 (libc.so.6:__GI_strncmp) redirected to 0x4c2e930 (__GI_strncmp)
---23261-- REDIR: 0x5af7e50 (libc.so.6:__GI_strchr) redirected to 0x4c2db90 (__GI_strchr)
---23261-- REDIR: 0x5af80b0 (libc.so.6:__GI_strcmp) redirected to 0x4c2f200 (__GI_strcmp)
---23261-- REDIR: 0x5b04ac0 (libc.so.6:strchrnul) redirected to 0x4c319b0 (strchrnul)
---23261-- REDIR: 0x5af3df0 (libc.so.6:free) redirected to 0x4c2bd80 (free)
---23261-- REDIR: 0x5afdbf0 (libc.so.6:__GI_stpcpy) redirected to 0x4c30da0 (__GI_stpcpy)
---23261-- REDIR: 0x52afea0 (libstdc++.so.6:operator new[](unsigned long)) redirected to 0x4c2b790 (operator new[](unsigned long))
---23261-- REDIR: 0x5af7e20 (libc.so.6:index) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
---23261-- REDIR: 0x5af4220 (libc.so.6:calloc) redirected to 0x4c2cbf0 (calloc)
---23261-- REDIR: 0x5b13dc0 (libc.so.6:wcslen) redirected to 0x4c32370 (wcslen)
---23261-- REDIR: 0x5af9c80 (libc.so.6:strnlen) redirected to 0x4c2e080 (strnlen)
 -- Prefissi unici --
 P: w
+P: ws
+P: wt
+P: ww
+P: wwym
 P: wx
+P: wx4
 P: wx4d
---23261-- REDIR: 0x5afc410 (libc.so.6:__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
-File ../dfas_of_users/wx-004-TXTbluestarALF.txt is open.
---23261-- REDIR: 0x5b048b0 (libc.so.6:rawmemchr) redirected to 0x4c319f0 (rawmemchr)
---23261-- REDIR: 0x52ae120 (libstdc++.so.6:operator delete[](void*)) redirected to 0x4c2c7d0 (operator delete[](void*))
-File ../dfas_of_users/wx-017-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-025-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-153-TXTbluestarALF.txt is open.
-Target user: 017
-DFA 004; dimensione: 3
-START Cover set
---23261-- REDIR: 0x5bc1090 (libc.so.6:__memmove_ssse3_back) redirected to 0x4c2f450 (memcpy@GLIBC_2.2.5)
-Cover set built! Size: 97
-STart augmente char set
-END aug char set. Size: 2
-START Test set
-END test set
-DFA 025; dimensione: 4
-START Cover set
-Cover set built! Size: 129
-STart augmente char set
-END aug char set. Size: 5285
-START Test set
-END test set
-DFA 153; dimensione: 4
-START Cover set
-Cover set built! Size: 129
-STart augmente char set
-END aug char set. Size: 4228
-START Test set
-END test set
-Generati i test
-153 - 0.000350535
-025 - 0.173055
-004 - 0.311111
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-004-017-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-004-025-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-004-153-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-017-025-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-017-153-TXTbluestarALF.txt is open.
-File ../dfas_of_users/wx-TXTbluestarALF-PAIR-025-153-TXTbluestarALF.txt is open.
-
-Media NCD: 0.25
-Dev Std NCD: 0.204124
-Dev Std norm NCD: 0.816497
-
-Media n stati: 3.55556
-Dev Std n stati: 0.684935
-Dev Std norm n stati: 0.192638
-==23261== Invalid read of size 8
-==23261==    at 0x413570: gi::dfa::~dfa() (dfa.cpp:84)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc6b0 is 0 bytes inside a block of size 132 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid read of size 8
-==23261==    at 0x4135A7: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid read of size 8
-==23261==    at 0x4135C0: _M_data (basic_string.h:293)
-==23261==    by 0x4135C0: _M_rep (basic_string.h:301)
-==23261==    by 0x4135C0: ~basic_string (basic_string.h:539)
-==23261==    by 0x4135C0: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb730 is 256 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-
-NCD Results:
-004: 0
-025: 0.25
-153: 0.5
+P: wx4dnr
+P: wx4dvx
+P: wx4e
+P: wx4ejx
+P: wx4emb
+P: wx4emc
+P: wx4emu
+P: wx4eny
+P: wx4ep7
+P: wx4ep8
+P: wx4ep9
+P: wx4epc
+P: wx4epd
+P: wx4epe
+P: wx4epk
+P: wx4epm
+P: wx4eps
+P: wx4ept
+P: wx4epw
+P: wx4epx
+P: wx4epz
+P: wx4eq7
+P: wx4eqe
+P: wx4eqg
+P: wx4eqk
+P: wx4eqm
+P: wx4eqn
+P: wx4eqq
+P: wx4eqr
+P: wx4eqs
+P: wx4eqt
+P: wx4equ
+P: wx4eqw
+P: wx4eqx
+P: wx4eqy
+P: wx4eqz
+P: wx4er5
+P: wx4er7
+P: wx4er9
+P: wx4erb
+P: wx4erd
+P: wx4ere
+P: wx4erg
+P: wx4erh
+P: wx4erj
+P: wx4f
+P: wx4g
+P: wx5
+P: wx55
+Current target user: 003A
 
 
-Utente 004
-TP: 14
-TN: 210
-FP: 54
-FN: 8
-Precision: 0.205882
-Recall: 0.636364
-F-measure: 0.311111
+*******************
+Prefisso: w
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
 
 
-Utente 025
-TP: 7522
-TN: 602479
-FP: 52322
-FN: 19566
-Precision: 0.125693
-Recall: 0.277688
-F-measure: 0.173055
+*******************
+Prefisso: ws
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
 
 
-Utente 153
-TP: 7
-TN: 505604
-FP: 39917
-FN: 8
-Precision: 0.000175333
-Recall: 0.466667
-F-measure: 0.000350535
-==23261== Invalid read of size 8
-==23261==    at 0x413570: gi::dfa::~dfa() (dfa.cpp:84)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc6b0 is 0 bytes inside a block of size 132 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid read of size 8
-==23261==    at 0x4135A7: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid read of size 8
-==23261==    at 0x4135C0: _M_data (basic_string.h:293)
-==23261==    by 0x4135C0: _M_rep (basic_string.h:301)
-==23261==    by 0x4135C0: ~basic_string (basic_string.h:539)
-==23261==    by 0x4135C0: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb730 is 256 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb5e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb5d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cace0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca9e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca9d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca3e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca3d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
---23261-- REDIR: 0x5b13030 (libc.so.6:wcscmp) redirected to 0x4c32390 (wcscmp)
-==23261== 
-==23261== HEAP SUMMARY:
-==23261==     in use at exit: 23,678 bytes in 621 blocks
-==23261==   total heap usage: 8,633,310 allocs, 8,632,731 frees, 191,564,226 bytes allocated
-==23261== 
-==23261== Searching for pointers to 621 not-freed blocks
-==23261== Checked 226,168 bytes
-==23261== 
-==23261== 30 bytes in 3 blocks are definitely lost in loss record 1 of 9
-==23261==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40DAF5: gi::dfa::table_filling() (dfa.cpp:154)
-==23261==    by 0x417667: gi::dfa::get_characterization_set() (dfa.cpp:1288)
-==23261==    by 0x418587: gi::dfa::get_augmented_characterization_set(int) (dfa.cpp:1517)
-==23261==    by 0x419247: gi::dfa::get_w_method_test_set(int) (dfa.cpp:1619)
-==23261==    by 0x40823A: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:340)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 240 bytes in 3 blocks are indirectly lost in loss record 2 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40711A: read_paired_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:286)
-==23261==    by 0x40482B: main (similarity.cpp:180)
-==23261== 
-==23261== 2,496 bytes in 96 blocks are indirectly lost in loss record 3 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x530B248: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530BE0A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530BEA3: std::string::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530C0EE: std::string::append(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x52C6B81: std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x414BDD: gi::dfa::read_dfa_file(std::string) (dfa.cpp:979)
-==23261==    by 0x406930: read_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:236)
-==23261==    by 0x40474B: main (similarity.cpp:172)
-==23261== 
-==23261== 4,992 bytes in 192 blocks are indirectly lost in loss record 4 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x530B248: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530BE0A: std::string::_Rep::_M_clone(std::allocator<char> const&, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530BEA3: std::string::reserve(unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x530C0EE: std::string::append(char const*, unsigned long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x52C6B81: std::basic_istream<char, std::char_traits<char> >& std::operator>><char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::basic_string<char, std::char_traits<char>, std::allocator<char> >&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19)
-==23261==    by 0x414BDD: gi::dfa::read_dfa_file(std::string) (dfa.cpp:979)
-==23261==    by 0x407128: read_paired_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:286)
-==23261==    by 0x40482B: main (similarity.cpp:180)
-==23261== 
-==23261== 6,144 bytes in 128 blocks are indirectly lost in loss record 5 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413B58: allocate (new_allocator.h:104)
-==23261==    by 0x413B58: _M_get_node (stl_tree.h:370)
-==23261==    by 0x413B58: _M_create_node<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:403)
-==23261==    by 0x413B58: _M_emplace_hint_unique<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:1669)
-==23261==    by 0x413B58: operator[] (stl_map.h:484)
-==23261==    by 0x413B58: gi::dfa::set_alphabet(std::string const*, int) (dfa.cpp:891)
-==23261==    by 0x414C0D: gi::dfa::read_dfa_file(std::string) (dfa.cpp:1000)
-==23261==    by 0x406930: read_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:236)
-==23261==    by 0x40474B: main (similarity.cpp:172)
-==23261== 
-==23261== 7,344 (240 direct, 7,104 indirect) bytes in 3 blocks are definitely lost in loss record 6 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40711A: read_paired_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:286)
-==23261==    by 0x40482B: main (similarity.cpp:180)
-==23261== 
-==23261== 7,344 (144 direct, 7,200 indirect) bytes in 3 blocks are definitely lost in loss record 7 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413B58: allocate (new_allocator.h:104)
-==23261==    by 0x413B58: _M_get_node (stl_tree.h:370)
-==23261==    by 0x413B58: _M_create_node<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:403)
-==23261==    by 0x413B58: _M_emplace_hint_unique<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:1669)
-==23261==    by 0x413B58: operator[] (stl_map.h:484)
-==23261==    by 0x413B58: gi::dfa::set_alphabet(std::string const*, int) (dfa.cpp:891)
-==23261==    by 0x414C0D: gi::dfa::read_dfa_file(std::string) (dfa.cpp:1000)
-==23261==    by 0x407128: read_paired_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:286)
-==23261==    by 0x40482B: main (similarity.cpp:180)
-==23261== 
-==23261== 8,960 (320 direct, 8,640 indirect) bytes in 4 blocks are definitely lost in loss record 8 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40691D: read_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:236)
-==23261==    by 0x40474B: main (similarity.cpp:172)
-==23261== 
-==23261== 9,072 bytes in 189 blocks are indirectly lost in loss record 9 of 9
-==23261==    at 0x4C2B0E0: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413B58: allocate (new_allocator.h:104)
-==23261==    by 0x413B58: _M_get_node (stl_tree.h:370)
-==23261==    by 0x413B58: _M_create_node<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:403)
-==23261==    by 0x413B58: _M_emplace_hint_unique<const std::piecewise_construct_t&, std::tuple<std::basic_string<char, std::char_traits<char>, std::allocator<char> >&&>, std::tuple<> > (stl_tree.h:1669)
-==23261==    by 0x413B58: operator[] (stl_map.h:484)
-==23261==    by 0x413B58: gi::dfa::set_alphabet(std::string const*, int) (dfa.cpp:891)
-==23261==    by 0x414C0D: gi::dfa::read_dfa_file(std::string) (dfa.cpp:1000)
-==23261==    by 0x407128: read_paired_dfa_of_users(std::string, std::string, std::vector<std::string, std::allocator<std::string> >) (similarity.cpp:286)
-==23261==    by 0x40482B: main (similarity.cpp:180)
-==23261== 
-==23261== LEAK SUMMARY:
-==23261==    definitely lost: 734 bytes in 13 blocks
-==23261==    indirectly lost: 22,944 bytes in 608 blocks
-==23261==      possibly lost: 0 bytes in 0 blocks
-==23261==    still reachable: 0 bytes in 0 blocks
-==23261==         suppressed: 0 bytes in 0 blocks
-==23261== 
-==23261== ERROR SUMMARY: 214 errors from 23 contexts (suppressed: 0 from 0)
-==23261== 
-==23261== 1 errors in context 1 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 1 errors in context 2 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x4135A7: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 1 errors in context 3 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 1 errors in context 4 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 1 errors in context 5 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x4135A7: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb630 is 0 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 1 errors in context 6 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 3 errors in context 7 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc6b0 is 0 bytes inside a block of size 132 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 3 errors in context 8 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x413570: gi::dfa::~dfa() (dfa.cpp:84)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 3 errors in context 9 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc6b0 is 0 bytes inside a block of size 132 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413580: gi::dfa::~dfa() (dfa.cpp:85)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 3 errors in context 10 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x413570: gi::dfa::~dfa() (dfa.cpp:84)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cc650 is 0 bytes inside a block of size 24 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x41359C: gi::dfa::~dfa() (dfa.cpp:87)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 4 errors in context 11 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca3d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 7 errors in context 12 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca9d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 12 errors in context 13 of 23:
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca3e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 21 errors in context 14 of 23:
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60ca9e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 21 errors in context 15 of 23:
-==23261== Invalid free() / delete / delete[] / realloc()
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x40C596: _M_dispose (basic_string.h:249)
-==23261==    by 0x40C596: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C596: ~pair (stl_pair.h:96)
-==23261==    by 0x40C596: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C596: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C596: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C596: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb5d0 is 0 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 21 errors in context 16 of 23:
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cace0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== 
-==23261== 32 errors in context 17 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x4135C0: _M_data (basic_string.h:293)
-==23261==    by 0x4135C0: _M_rep (basic_string.h:301)
-==23261==    by 0x4135C0: ~basic_string (basic_string.h:539)
-==23261==    by 0x4135C0: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb730 is 256 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 32 errors in context 18 of 23:
-==23261== Invalid read of size 8
-==23261==    at 0x4135C0: _M_data (basic_string.h:293)
-==23261==    by 0x4135C0: _M_rep (basic_string.h:301)
-==23261==    by 0x4135C0: ~basic_string (basic_string.h:539)
-==23261==    by 0x4135C0: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40A41A: compare_dfas_NCD(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:444)
-==23261==    by 0x40489C: main (similarity.cpp:184)
-==23261==  Address 0x60cb730 is 256 bytes inside a block of size 264 free'd
-==23261==    at 0x4C2C83C: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x4135E3: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x409423: compare_dfas_w_method(std::string, std::map<std::string, gi::dfa, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >&) (similarity.cpp:313)
-==23261==    by 0x4047B7: main (similarity.cpp:175)
-==23261== 
-==23261== 
-==23261== 42 errors in context 19 of 23:
-==23261== Invalid read of size 4
-==23261==    at 0x40C585: __exchange_and_add (atomicity.h:49)
-==23261==    by 0x40C585: __exchange_and_add_dispatch (atomicity.h:82)
-==23261==    by 0x40C585: _M_dispose (basic_string.h:246)
-==23261==    by 0x40C585: ~basic_string (basic_string.h:539)
-==23261==    by 0x40C585: ~pair (stl_pair.h:96)
-==23261==    by 0x40C585: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40C585: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, short unsigned int> > > (new_allocator.h:124)
-==23261==    by 0x40C585: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40C585: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1127)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x40C546: std::_Rb_tree<std::string, std::pair<std::string const, unsigned short>, std::_Select1st<std::pair<std::string const, unsigned short> >, std::less<std::string>, std::allocator<std::pair<std::string const, unsigned short> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, unsigned short> >*) (stl_tree.h:1125)
-==23261==    by 0x4135F2: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x4135F2: ~map (stl_map.h:96)
-==23261==    by 0x4135F2: gi::dfa::~dfa() (dfa.cpp:81)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261==  Address 0x60cb5e0 is 16 bytes inside a block of size 26 free'd
-==23261==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23261==    by 0x413623: _M_dispose (basic_string.h:249)
-==23261==    by 0x413623: ~basic_string (basic_string.h:539)
-==23261==    by 0x413623: gi::dfa::~dfa() (dfa.cpp:91)
-==23261==    by 0x40BA13: ~pair (stl_pair.h:96)
-==23261==    by 0x40BA13: ~_Rb_tree_node (stl_tree.h:131)
-==23261==    by 0x40BA13: destroy<std::_Rb_tree_node<std::pair<const std::basic_string<char>, gi::dfa> > > (new_allocator.h:124)
-==23261==    by 0x40BA13: _M_destroy_node (stl_tree.h:421)
-==23261==    by 0x40BA13: std::_Rb_tree<std::string, std::pair<std::string const, gi::dfa>, std::_Select1st<std::pair<std::string const, gi::dfa> >, std::less<std::string>, std::allocator<std::pair<std::string const, gi::dfa> > >::_M_erase(std::_Rb_tree_node<std::pair<std::string const, gi::dfa> >*) (stl_tree.h:1127)
-==23261==    by 0x404F79: ~_Rb_tree (stl_tree.h:671)
-==23261==    by 0x404F79: ~map (stl_map.h:96)
-==23261==    by 0x404F79: main (similarity.cpp:172)
-==23261== 
-==23261== ERROR SUMMARY: 214 errors from 23 contexts (suppressed: 0 from 0)
+*******************
+Prefisso: wt
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: ww
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wwym
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4d
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4dnr
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4dvx
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4e
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ejx
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emb
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emc
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emu
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eny
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep7
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep8
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep9
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epc
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epd
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epe
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epk
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epm
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eps
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ept
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epw
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epx
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epz
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eq7
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqe
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqg
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqk
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqm
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqn
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqq
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqr
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqs
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqt
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4equ
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqw
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqx
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqy
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqz
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er5
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er7
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er9
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erb
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erd
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ere
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erg
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erh
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erj
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4f
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4g
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx5
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx55
+*******************
+Target user: 003A
+ERR: Impossibile to find target user's dfa
+Added matrix for target user: 003A
+Current target user: 003B
+
+
+*******************
+Prefisso: w
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: ws
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wt
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: ww
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wwym
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4d
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4dnr
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4dvx
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4e
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ejx
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emb
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emc
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4emu
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eny
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep7
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep8
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ep9
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epc
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epd
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epe
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epk
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epm
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eps
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ept
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epw
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epx
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4epz
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eq7
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqe
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqg
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqk
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqm
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqn
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqq
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqr
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqs
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqt
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4equ
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqw
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqx
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqy
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4eqz
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er5
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er7
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4er9
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erb
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erd
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4ere
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erg
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erh
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4erj
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4f
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx4g
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx5
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+
+
+*******************
+Prefisso: wx55
+*******************
+Target user: 003B
+ERR: Impossibile to find target user's dfa
+Added matrix for target user: 003B
+
+
+USER: 003A
+
+
+USER: 003B
+*********************************
+NEW MATRIX SCORES - AVERAGE
+*********************************
+
+
+USER: 003A
+
+
+USER: 003B
