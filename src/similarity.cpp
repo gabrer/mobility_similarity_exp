@@ -86,14 +86,18 @@ int main(int argc, char* argv[])
 
 	string path_of_dfas = "../dfas_of_users/";
 
-	bool cross_validation = true;
+
+	/////////////////////////////////////
+	//// CROSS VALL ////////////////////
+	bool cross_validation = false;
 	const int cross_val_iterationes = 3;
+	/////////////////////////////////////
 
 
-	static const int n_compared_users = 1;
-	const int int_comp_user[n_compared_users] = {3, /*4, 17, 30, 68, 153, 163*/};
+	static const int n_compared_users = 7;
+	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
-
+//
 	// String ID of users
 	vector<string> users;
 
