@@ -94,9 +94,10 @@ int main(int argc, char* argv[])
 	/////////////////////////////////////
 
 
-	static const int n_compared_users = 7;
-	const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};
-	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, 128, 140, 144, 153};
+	static const int n_compared_users = 10;
+	const int int_comp_user[n_compared_users] = {3, 4, 17, 30,  41, 62,  68,  128,  153, 163}; 		// Added: 41, 62, 128
+	// const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};   --> Articolo cinesi
+	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, /*128,*/ 140, 144, 153};
 //
 	// String ID of users
 	vector<string> users;
@@ -315,6 +316,51 @@ int main(int argc, char* argv[])
 				double score = it.second;
 
 				cout << user << " - " << score << endl;
+			}
+		}
+	}
+
+
+
+	// Print GNUPLOT format
+	// Prefixes -> Users -> Scores with other users
+	cout << "*********************************" << endl;
+	cout << " GNUPLOT AVERAGE " << endl;
+	cout << "*********************************" << endl;
+	// For every prefix
+	for( auto &prefix : prefixes)
+	{
+		cout << endl << "***************" << endl;
+		cout << prefix << endl;
+		cout << "***************" << endl;
+
+		// First line
+		cout << "Users";
+		for(auto &matrix : all_matrices)
+			cout << "\t" << matrix.first;
+		cout << endl;
+
+		// Futher lines
+		for(auto &matrix : all_matrices)
+		{
+			// Username
+			cout << matrix.first << endl;
+
+			// Verifica che sia presente il prefisso
+			if(matrix.first.count(prefix) != 0)
+			{
+				for(auto &compared_user : users)
+				{
+					// Whether the compared user have a value for selected prefix, print score
+					if(matrix.first.at(prefix).count(compared_user) != 0)
+					{
+						cout << "\t" << matrix.first.at(prefix).at(compared_user);
+					} else {
+						cout << "\tna";
+					}
+				}
+			} else {
+				cout << "naprefix";
 			}
 		}
 	}
