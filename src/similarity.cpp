@@ -89,14 +89,14 @@ int main(int argc, char* argv[])
 
 	/////////////////////////////////////
 	//// CROSS VALL ////////////////////
-	bool cross_validation = false;
-	const int cross_val_iterationes = 3;
+	bool cross_validation = true;
+	const int cross_val_iterationes = 5;
 	/////////////////////////////////////
 
 
-	static const int n_compared_users = 7;
-	//const int int_comp_user[n_compared_users] = {3, 4, 17/*, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
-	 const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163}; //  --> Articolo cinesi
+	static const int n_compared_users = 1;
+	const int int_comp_user[n_compared_users] = {3/*, 4, 17, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
+	// const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163}; //  --> Articolo cinesi
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, /*128,*/ 140, 144, 153};
 //
 	// String ID of users
@@ -140,6 +140,7 @@ int main(int argc, char* argv[])
 			user_id_string = intTostring(c_user);
 
 		for(int i=0; i<cross_val_iterationes; ++i){
+			users.push_back(user_id_string);
 			users.push_back(user_id_string+"A-CV"+intTostring(i));
 			users.push_back(user_id_string+"B-CV"+intTostring(i));
 		}
@@ -272,19 +273,29 @@ int main(int argc, char* argv[])
 
 						// Check whether there are scores for the target and compared user respect to current prefix
 						// (e.g. if w-method is too expensive it might be stopped in some case)
-						if( all_matrices.at(compared_user).at(prefix_target).count(target_user) != 0  && all_matrices.at(target_user).at(prefix_target).count(compared_user) != 0 )
+						if( all_matrices.at(target_user).at(prefix_target).count(compared_user) != 0 )
 						{
 							double target_score	  = all_matrices.at(target_user).at(prefix_target).at(compared_user);
-							double compared_score = all_matrices.at(compared_user).at(prefix_target).at(target_user);
-							double average = ((double)target_score + (double)compared_score) / (double) 2.0;
 
-							if(std::isnan(target_score)){
-								if(!std::isnan(compared_score))
-									average = compared_score;
-								else
-									average = NAN;
-							}else if(std::isnan(compared_score))
-								average = target_score;
+							double average = target_score;
+
+							if(all_matrices.at(compared_user).at(prefix_target).count(target_user) != 0){
+								double compared_score = all_matrices.at(compared_user).at(prefix_target).at(target_user);
+								average = ((double)target_score + (double)compared_score) / (double) 2.0;
+
+
+								if(std::isnan(target_score)){
+									if(!std::isnan(compared_score))
+										average = compared_score;
+									else
+										average = NAN;
+								}else if(std::isnan(compared_score))
+									average = target_score;
+							}
+
+
+							if(std::isnan(target_score))
+								average = NAN;
 
 
 							all_matrices[target_user][prefix_target][compared_user] = average;
@@ -377,6 +388,40 @@ int main(int argc, char* argv[])
 	}
 
 
+
+//	// Print HEATMAP format
+//	// Prefixes -> Users -> Scores with other users
+//	cout << "*********************************" << endl;
+//	cout << " HEATMAP " << endl;
+//	cout << "*********************************" << endl;
+//	// For every prefix
+//	for( auto &prefix : prefixes)
+//	{
+//		//cout << endl << endl << "***************" << endl;
+//		//cout << prefix << endl;
+//		//cout << "***************" << endl;
+//
+//
+//		// Futher lines
+//		for(auto &matrix : all_matrices)
+//		{
+//			// Username
+//			//cout << endl << matrix.first;
+//
+//			// Verifica che sia presente il prefisso
+//			if(matrix.second.count(prefix) != 0)
+//			{
+//				// Cerca i sovra-prefissi
+//				for( auto &suppref : prefixes)
+//				{
+//					if (suppref.find(prefix,0) != std::string::npos) {
+//					    std::cout << "found!" << '\n';
+//					    cout << "Prefix: "<<prefix << "; Supprefix: "<<suppref << endl;
+//					}
+//				}
+//			}
+//		}
+//	}
 
 
 
