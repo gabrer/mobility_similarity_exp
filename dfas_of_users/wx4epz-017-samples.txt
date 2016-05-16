@@ -1,0 +1,81 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 1 1 0 2 8 9 d e d 9 8 2 0 1
++ 1 2 8 9 d f g u
++ 11 8 9 c f g u
++ 22 8 9 d f g u
++ 17 8 9 f g u
++ 4 g f c 9 8
++ 2 p r x z
++ 1 u g f
++ 1 u g f 9 8
++ 1 u g f c 9
++ 44 u g f c 9 8
++ 2 u g f d 9 8
++ 1 u s e s u v y z x r p
++ 1 y
++ 2 z
++ 1 z w t s k 7 6 4 1 0
++ 8 z x r p
++ 1 z x r q m k 7
++ 1 z x r q m k 7 6 1 3 9 d e g s e d f g u
++ 1 z x r q n p
++ 1 z x w y z x r p n p
++ 1 z y v u s e g f g u
+- 1 1 0 1 0
+- 1 1 0 2 8 9 d f g u
+- 1 8 9
+- 1 8 9 c u
+- 1 8 9 d f g
+- 1 8 9 d f g u v
+- 1 8 9 d f u
+- 1 8 9 f
+- 3 8 9 f g
+- 3 8 9 f u
+- 2 8 9 g
+- 2 8 9 g u
+- 1 8 c g
+- 1 8 c g u
+- 1 8 d g
+- 1 8 f
+- 2 8 f g
+- 1 9 8
+- 2 c
+- 2 c f
+- 1 d u
+- 1 f c 9 8
+- 1 g c 8
+- 2 g f 8
+- 2 g f 9
+- 4 g f 9 8
+- 2 g f c 8
+- 1 g f c b 8
+- 2 n
+- 1 n j m
+- 1 n p n
+- 1 n p n j n p n
+- 1 n q r p
+- 1 n q r x r q w x w x q r x w x w y z y z y z y z
+- 1 p n p n p
+- 1 p n q w y z
+- 1 p q w x z
+- 1 p r x z y
+- 1 p r z
+- 1 p w z y
+- 1 t s r q n
+- 1 u c
+- 1 u f 9
+- 2 u f 9 8
+- 1 u f c 8
+- 1 u f c 9 8
+- 1 u g f c
+- 1 u g f c 9 8 9 8
+- 1 y w x r p
+- 1 y z y z x r p
+- 1 z w x r x r q w q w q w x r x r
+- 1 z x r x w y
+- 1 z x z
+- 1 z y
+- 1 z y w x q r q n
+- 1 z y z x r p
+- 1 z y z y w x r p

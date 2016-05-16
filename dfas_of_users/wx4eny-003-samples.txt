@@ -1,0 +1,128 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 1 8 9 d e s t m k m q m q r
++ 1 h j h j h k s u g f d f c b
++ 1 j m t v
++ 4 n
++ 1 n p n
++ 1 n p n p n p n p n p
++ 1 n p r
++ 8 p
++ 2 p n
++ 1 p n p n q m t v
++ 1 p q r p n p
++ 1 p r
++ 1 p r q m t v
++ 1 r
++ 1 r p r
++ 1 r q m j m t v
++ 5 r q m t v
++ 1 r q r p
++ 1 u s t m j m q r
++ 1 u s t m n j m q r
++ 1 u t m q n j n p j n p
++ 1 u t m q r p j
++ 3 v t m j
++ 2 v t m q r
++ 1 v t m q r p r
+- 1 2 3 6 7 k 7 6 3 8
+- 1 2 3 6 7 k m j m q n p
+- 2 2 3 6 7 k m k m t s t v u
+- 1 2 3 6 7 k m k q r
+- 3 2 3 6 7 k m q r
+- 1 2 3 6 7 k m q r p r
+- 2 2 3 6 7 k m t v
+- 8 8 2 3 6 7 k m q r
+- 1 8 3 6 k m r
+- 1 8 9 3 6 7 k m t v
+- 1 8 9 d e 7 e s k
+- 1 b c b c b c
+- 1 f g e d e s t m t m q r
+- 1 h j
+- 2 h k m t v
+- 1 h m
+- 1 j m j n m t v
+- 1 j m k 7 6 d 9 8
+- 1 j m k m q r
+- 1 j m k t
+- 1 j m n q w y
+- 1 j m q m t v
+- 2 j m t
+- 1 j n m v
+- 1 j v
+- 1 k r
+- 1 m j
+- 1 m k 7 6 9 8
+- 1 m q
+- 1 m q r
+- 1 m t m n q r
+- 1 n p n p n p n p n p n p j m j
+- 1 p n p n p r
+- 2 q m t v
+- 1 r m k 3 8
+- 1 r n q m
+- 2 r p
+- 1 r p n p
+- 2 r q
+- 1 r q k 6 3 9 8
+- 2 r q k 7 3 8
+- 1 r q m
+- 1 r q m 7 6 3
+- 2 r q m j
+- 6 r q m k 7 6 3 2 8
+- 2 r q m k 7 6 3 8
+- 1 r q m k 7 6 d 9 8
+- 1 r q m k 7 e d 9 8
+- 1 r q m k m t s t v u g
+- 1 r q m t
+- 3 r q m t v u
+- 1 r q m t v u s u
+- 1 r q m w t m k 7 6 3 9 8
+- 1 r q n
+- 1 r q n p
+- 3 r q r
+- 1 r q w
+- 1 r q w t v
+- 1 r x r
+- 1 r x w t
+- 2 t
+- 2 t m
+- 1 t m k
+- 1 t m q
+- 1 t m r q m j
+- 1 t v
+- 1 u s k 7 d 3 9 8
+- 1 u s k m k s k s k m q r
+- 1 u s m
+- 1 u s t m k 7 6 3 2 8
+- 2 u s t m q r
+- 2 u t m j
+- 1 u t m k 7 6
+- 1 u t m k 7 e d 9 3 2 8
+- 3 u t m q r
+- 2 u t s t m q r
+- 1 u v t
+- 15 u v t m j
+- 18 u v t m q r
+- 1 v m q r
+- 2 v t
+- 3 v t m
+- 1 v t m j h
+- 1 v t m j n r p r
+- 2 v t m k 7 6 d 9 8
+- 1 v t m q n j m q r
+- 1 v t m q n p
+- 1 v t m q n p r
+- 2 v t m q p r
+- 1 v t m q r p
+- 1 v t m t m q
+- 4 v t m t m q r
+- 1 v t m t v
+- 1 v t w q r
+- 1 v u t m j h
+- 1 v u v t m j
+- 2 v y
+- 1 w q w q m t v
+- 1 x w t s k 7 m k 7 6 3 2
+- 1 y t m q r
+- 1 y w q p
