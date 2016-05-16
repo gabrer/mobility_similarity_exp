@@ -1,0 +1,25 @@
+32
+$ 0 1 2 3 4 5 6 7 8 9 b c d e f g h j k m n p q r s t u v w x y z 
++ 2 8
++ 2 8 9 d e g u v t v y w x z
++ 8 8 9 d f
++ 1 b
++ 8 b c
++ 2 b c f
++ 1 c f
++ 1 f
++ 6 f c b
++ 5 g f d 9 8
+- 1 b 8 c
+- 9 c
+- 1 c b
+- 1 c f c
+- 1 d 9 c
+- 11 g f c
+- 1 m n
+- 1 p r q
+- 1 s k 5
+- 3 y
+- 1 y v y
+- 1 z
+- 8 z y

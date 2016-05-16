@@ -94,9 +94,9 @@ int main(int argc, char* argv[])
 	/////////////////////////////////////
 
 
-	static const int n_compared_users = 3;
-	const int int_comp_user[n_compared_users] = {3, 4, 17/*, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
-	// const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163};   --> Articolo cinesi
+	static const int n_compared_users = 7;
+	//const int int_comp_user[n_compared_users] = {3, 4, 17/*, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
+	 const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163}; //  --> Articolo cinesi
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, /*128,*/ 140, 144, 153};
 //
 	// String ID of users
@@ -361,7 +361,10 @@ int main(int argc, char* argv[])
 					if(matrix.second.at(prefix).count(compared_user) != 0)
 					{
 						cout.precision(3);
-						cout << "\t" << matrix.second.at(prefix).at(compared_user);
+						if(matrix.second.at(prefix).at(compared_user) > 1)
+							cout << "\t1";
+						else
+							cout << "\t" << matrix.second.at(prefix).at(compared_user);
 					} else {
 						cout << "\tna";
 					}
@@ -372,6 +375,7 @@ int main(int argc, char* argv[])
 			}
 		}
 	}
+
 
 
 
