@@ -55,17 +55,17 @@ struct statistical_measures
 	string prefix;
 
 	// True positive, and so on.
-	int tp = -1;
-	int tn = -1;
-	int fp = -1;
-	int fn = -1;
+	int tp = 0;
+	int tn = 0;
+	int fp = 0;
+	int fn = 0;
 
 
-	double precision = -1;
-	double recall = -1;
-	double f_measure = -1;
-	double specificity = -1;
-	double bcr = -1;
+	double precision = 0;
+	double recall = 0;
+	double f_measure = 0;
+	double specificity = 0;
+	double bcr = 0;
 };
 
 
