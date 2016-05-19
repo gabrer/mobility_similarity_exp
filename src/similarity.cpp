@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
 {
 
 	//parse input arguments
-	//int target_dfa = parse_input_args(argc, argv);
+	int target_dfa = parse_input_args(argc, argv);
 
 	string path_of_dfas = "../dfas_of_users/";
 
@@ -94,8 +94,8 @@ int main(int argc, char* argv[])
 	/////////////////////////////////////
 
 
-	static const int n_compared_users = 1;
-	const int int_comp_user[n_compared_users] = {3/*, 4, 17, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
+	static const int n_compared_users = 10;
+	const int int_comp_user[n_compared_users] = {3, 4, 17, 30,  41, 62,  68,  128,  153, 163}; 		// Added: 41, 62, 128
 	// const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163}; //  --> Articolo cinesi
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, /*128,*/ 140, 144, 153};
 
@@ -128,7 +128,9 @@ int main(int argc, char* argv[])
 			exit(EXIT_FAILURE);
 		}
 
-		int c_user = int_comp_user[0];
+		//int c_user = int_comp_user[0];
+
+		int c_user = target_dfa;
 
 		// User string id
 		string user_id_string ="";
@@ -845,12 +847,11 @@ map<string, double> compare_dfas_NCD(string target_user_string, map <string, gi:
 int parse_input_args(int argc, char* argv[]){
 	if(argc>MAX_ARGC || argc<MIN_ARGC){
 		cerr<<MSG_WRONG_ARGC<<endl;
-
 		exit(EXIT_FAILURE);
 	}
 
 	int user = stringToint(argv[1]);
-	cout << "Reed target user: "<< user << endl;
+	cout << "Reed from console - Target user: "<< user << endl;
 
 	return user;
 	//*dp = argv[2];
