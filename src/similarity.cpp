@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
 	const int int_comp_user[n_compared_users] = {3/*, 4, 17, 30,  41, 62,  68,  128,  153, 163*/}; 		// Added: 41, 62, 128
 	// const int int_comp_user[n_compared_users] = {3, 4, 17, 30, 68, 153, 163}; //  --> Articolo cinesi
 	//const int int_comp_user[n_compared_users] = {4, 17, 25, /*41, 62,*/ 85, /*128,*/ 140, 144, 153};
-//
+
 	// String ID of users
 	vector<string> users;
 
