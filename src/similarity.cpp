@@ -248,6 +248,7 @@ int main(int argc, char* argv[])
 
 	// Compute an AVERAGE value of scores
 	// Cycle over all the target users
+	// all_matrices -> Prefixes -> Users -> Scores with other users
 	for(auto &matrix_target : all_matrices)
 	{
 		string target_user = matrix_target.first;
@@ -257,7 +258,7 @@ int main(int argc, char* argv[])
 			string compared_user = matrix_compared.first;
 
 			// For all the OTHER users: read value for the same prefix and compute an average value
-			if(matrix_compared.first.compare(matrix_target.first))				// Check matrices of other users
+			if(compared_user.compare(target_user))				// Check matrices of other users
 			{
 
 				// Cycle over prefixes in the matrices
@@ -268,19 +269,26 @@ int main(int argc, char* argv[])
 
 
 					// Check whether there is the prefix in compared user
-					if(all_matrices.at(compared_user).count(prefix_target) != 0)
+					//if(all_matrices.at(compared_user).count(prefix_target) != 0)
+					if( matrix_compared.second.count(prefix_target) != 0)
 					{
 
 						// Check whether there are scores for the target and compared user respect to current prefix
 						// (e.g. if w-method is too expensive it might be stopped in some case)
-						if( all_matrices.at(target_user).at(prefix_target).count(compared_user) != 0 )
+						//if( all_matrices.at(target_user).at(prefix_target).count(compared_user) != 0 )
+						// In thi first if: check if in target user there is a score for compared user for the selected prefix
+						if( matrix_target.second.at(prefix_target).count(compared_user) != 0 )
 						{
-							double target_score	  = all_matrices.at(target_user).at(prefix_target).at(compared_user);
+							//double target_score = all_matrices.at(target_user).at(prefix_target).at(compared_user);
+							double target_score	= matrix_target.second.at(prefix_target).at(compared_user);
 
-							double average = target_score;
+							double average 		= target_score;
 
-							if(all_matrices.at(compared_user).at(prefix_target).count(target_user) != 0){
-								double compared_score = all_matrices.at(compared_user).at(prefix_target).at(target_user);
+
+							// Check if in comparer user there is a score for target user respect to selected prefix
+							if( matrix_compared.second.at(prefix_target).count(target_user) != 0){
+
+								double compared_score = matrix_compared.second.at(prefix_target).at(target_user);
 								average = ((double)target_score + (double)compared_score) / (double) 2.0;
 
 
@@ -291,11 +299,13 @@ int main(int argc, char* argv[])
 										average = NAN;
 								}else if(std::isnan(compared_score))
 									average = target_score;
+
+							} else {
+
+								if(std::isnan(target_score))
+									average = NAN;
 							}
 
-
-							if(std::isnan(target_score))
-								average = NAN;
 
 
 							all_matrices[target_user][prefix_target][compared_user] = average;
