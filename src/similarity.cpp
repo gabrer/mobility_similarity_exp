@@ -123,10 +123,10 @@ int main(int argc, char* argv[])
 
 	} else {
 
-		if(n_compared_users != 1){
-			cout << "ERR: K fold need only one user ID!" << endl;
-			exit(EXIT_FAILURE);
-		}
+//		if(n_compared_users != 1){
+//			cout << "ERR: K fold need only one user ID!" << endl;
+//			exit(EXIT_FAILURE);
+//		}
 
 		//int c_user = int_comp_user[0];
 
