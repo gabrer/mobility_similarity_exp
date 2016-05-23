@@ -90,7 +90,7 @@ int main(int argc, char* argv[])
 	/////////////////////////////////////
 	//// CROSS VALL ////////////////////
 	bool cross_validation = true;
-	const int cross_val_iterationes = 5;
+	const int cross_val_iterationes = 10;
 	/////////////////////////////////////
 
 
@@ -331,6 +331,11 @@ int main(int argc, char* argv[])
 		cout << endl << endl << "USER: " <<matrix.first << endl;
 		for(auto &prefix : matrix.second)
 		{
+
+			// Calcolo media e varianza
+			boost::accumulators::accumulator_set<double, boost::accumulators::features<boost::accumulators::tag::mean, boost::accumulators::tag::variance> > acc;
+
+
 			cout << endl <<  "Score - Prefisso: "<<prefix.first << endl;
 
 			for(auto &it : prefix.second)
@@ -339,7 +344,12 @@ int main(int argc, char* argv[])
 				double score = it.second;
 
 				cout << user << " - " << score << endl;
+
+				acc(score);
 			}
+
+			cout << endl << "Media : "<< boost::accumulators::mean(acc) << endl << "Dev Std : "<< sqrt(boost::accumulators::variance(acc)) << endl;
+			cout << "Dev Std norm: "<< sqrt(boost::accumulators::variance(acc))/boost::accumulators::mean(acc) << endl;
 		}
 	}
 
